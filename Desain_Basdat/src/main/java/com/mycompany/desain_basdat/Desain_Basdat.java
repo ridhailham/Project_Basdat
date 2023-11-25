@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  */
 
-package Eksekusi;
+package com.mycompany.desain_basdat;
 
 
 public class Desain_Basdat {
