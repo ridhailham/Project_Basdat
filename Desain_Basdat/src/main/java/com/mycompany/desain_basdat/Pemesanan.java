@@ -13,14 +13,16 @@ import java.awt.Frame;
 class Pemesanan {
     private int sno;
     private String nama_pelanggan, nomor, frame, lensa, total_harga;
+    private byte[] picture;
     
-    public Pemesanan(int sno, String nama_pelanggan, String nomor, String frame, String lensa, String total_harga){
+    public Pemesanan(int sno, String nama_pelanggan, String nomor, String frame, String lensa, String total_harga, byte[] image){
         this.sno = sno;
         this.nama_pelanggan = nama_pelanggan;
         this.nomor = nomor;
         this.frame = frame;
         this.lensa = lensa;
         this.total_harga = total_harga;
+        this.picture = image;
     }
     
     public int getsno() {
@@ -40,5 +42,8 @@ class Pemesanan {
     }
     public String gettotal_harga() {
         return total_harga;
+    }
+    public byte[] getImage() {
+        return picture;
     }
 }
