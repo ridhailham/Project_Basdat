@@ -11,11 +11,11 @@ import java.awt.Frame;
  * @author LENOVO
  */
 class Pemesanan {
-    private int sno;
+    private int sno, user_sno;
     private String nama_pelanggan, nomor, frame, lensa, total_harga;
     private byte[] picture;
     
-    public Pemesanan(int sno, String nama_pelanggan, String nomor, String frame, String lensa, String total_harga, byte[] image){
+    public Pemesanan(int sno, String nama_pelanggan, String nomor, String frame, String lensa, String total_harga, byte[] image, int user_sno){
         this.sno = sno;
         this.nama_pelanggan = nama_pelanggan;
         this.nomor = nomor;
@@ -23,6 +23,9 @@ class Pemesanan {
         this.lensa = lensa;
         this.total_harga = total_harga;
         this.picture = image;
+        this.user_sno = user_sno;
+        
+        
     }
     
     public int getsno() {
@@ -45,5 +48,8 @@ class Pemesanan {
     }
     public byte[] getImage() {
         return picture;
+    }
+    public int getuser_sno() {
+        return user_sno;
     }
 }

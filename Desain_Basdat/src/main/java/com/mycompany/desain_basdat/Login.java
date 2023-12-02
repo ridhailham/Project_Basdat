@@ -9,6 +9,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.Statement;
 import javax.swing.JOptionPane;
 import javax.swing.text.PasswordView;
 
@@ -17,7 +18,9 @@ import javax.swing.text.PasswordView;
  * @author LENOVO
  */
 public class Login extends javax.swing.JFrame {
-
+    
+    public String name = null;
+    public static int idUser;
     /**
      * Creates new form L
      */
@@ -165,16 +168,14 @@ public class Login extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(login, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(username)
                         .addComponent(jSeparator1)
                         .addComponent(jSeparator2)
-                        .addGroup(jPanel2Layout.createSequentialGroup()
-                            .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(17, 17, 17))
                         .addComponent(password, javax.swing.GroupLayout.DEFAULT_SIZE, 270, Short.MAX_VALUE)
                         .addComponent(lbl_username, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(lbl_password, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(login, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(108, Short.MAX_VALUE))
         );
@@ -247,23 +248,45 @@ public class Login extends javax.swing.JFrame {
                         "encrypt=true;" +
                         "trustServerCertificate=true;" + "loginTimeout=30;";
             Connection con = DriverManager.getConnection(url);
-            String sql = "SELECT * FROM [user] WHERE username=? AND password=?";
+            String sql = "SELECT * FROM [User] WHERE username=? AND password=?";
 
             PreparedStatement pst = con.prepareStatement(sql);
             pst.setString(1, username.getText());
             pst.setString(2, password.getText());
             ResultSet rs = pst.executeQuery();
             
-            if(rs.next()){
-                JOptionPane.showMessageDialog(null, "Username and Password Matched");
-                Home field = new Home();
-                field.setVisible(true);
-                setVisible(false);
+            if(username.getText().equals("admin") && password.getText().equals("admin")){
+                if(rs.next()){
+                    JOptionPane.showMessageDialog(null, "Username and Password Matched");
+                    
+                    
+                    idUser = rs.getInt("sno");
+                    name = username.getText();
+                    AdminHome field = new AdminHome();
+                    field.setVisible(true);
+                    setVisible(false);
+                } else {
+                    JOptionPane.showMessageDialog(null, "Username and password not Correct");
+                    username.setText("");
+                    password.setText("");
+                }
             } else {
-                JOptionPane.showMessageDialog(null, "Username and password not Correct");
-                username.setText("");
-                password.setText("");
+                if(rs.next()){
+                    JOptionPane.showMessageDialog(null, "Username and Password Matched");
+                    idUser = rs.getInt("sno");
+                    name = username.getText();
+                    
+                    Home field = new Home();
+                    field.setVisible(true);
+                    setVisible(false);
+                } else {
+                    JOptionPane.showMessageDialog(null, "Username and password not Correct");
+                    username.setText("");
+                    password.setText("");
+                }
             }
+            
+            
             con.close();
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, e);

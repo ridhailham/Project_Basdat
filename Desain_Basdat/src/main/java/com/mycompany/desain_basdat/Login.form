@@ -129,17 +129,14 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="jLabel4" min="-2" pref="99" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="login" min="-2" pref="89" max="-2" attributes="0"/>
                           <Component id="username" max="32767" attributes="0"/>
                           <Component id="jSeparator1" alignment="0" max="32767" attributes="0"/>
                           <Component id="jSeparator2" max="32767" attributes="0"/>
-                          <Group type="102" alignment="0" attributes="0">
-                              <Component id="jLabel5" min="-2" pref="146" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
-                          </Group>
                           <Component id="password" alignment="0" pref="270" max="32767" attributes="0"/>
                           <Component id="lbl_username" max="32767" attributes="0"/>
                           <Component id="lbl_password" max="32767" attributes="0"/>
+                          <Component id="login" min="-2" pref="89" max="-2" attributes="0"/>
+                          <Component id="jLabel5" alignment="0" min="-2" pref="146" max="-2" attributes="0"/>
                           <Component id="jLabel3" alignment="0" min="-2" pref="120" max="-2" attributes="0"/>
                       </Group>
                   </Group>

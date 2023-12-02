@@ -26,7 +26,7 @@ import javax.swing.table.TableModel;
  *
  * @author LENOVO
  */
-public class Home extends javax.swing.JFrame {
+public class AdminHome extends javax.swing.JFrame {
 
     String filename = null;
     byte[] person_image = null;
@@ -35,7 +35,7 @@ public class Home extends javax.swing.JFrame {
     int harga_lensa = 0;
     int harga_akhir = 0;
     
-    public Home() {
+    public AdminHome() {
         initComponents();
         show_pemesanan();
         Toolkit toolkit = getToolkit();
@@ -55,13 +55,12 @@ public class Home extends javax.swing.JFrame {
                         "encrypt=true;" +
                         "trustServerCertificate=true;" + "loginTimeout=30;";
             Connection con = DriverManager.getConnection(url);
-            String query1 = "SELECT * FROM Pemesanan where user_sno=" + Login.idUser;
+            String query1 = "SELECT id, nama_pelanggan, nomor, frame, lensa, total_harga, image, user_sno FROM Pemesanan JOIN [User] ON Pemesanan.user_sno = [User].sno";
             Statement st = con.createStatement();
             ResultSet rs = st.executeQuery(query1);
             Pemesanan pemesanan;
             while(rs.next()){
                 pemesanan = new Pemesanan(rs.getInt("id"), rs.getString("nama_pelanggan"), rs.getString("nomor"), rs.getString("frame"), rs.getString("lensa"), rs.getString("total_harga"), rs.getBytes("image"), rs.getInt("user_sno"));
-                
                 pemesananList.add(pemesanan);
             }
             
@@ -76,7 +75,7 @@ public class Home extends javax.swing.JFrame {
         DefaultTableModel model = (DefaultTableModel)jTable_Display_Pemesanan.getModel();
         model.setRowCount(0);
         
-        Object[] row = new Object[6];
+        Object[] row = new Object[7];
         for(int i = 0; i < list.size(); i++) {
             row[0] = list.get(i).getsno();
             row[1] = list.get(i).getnama_pelanggan();
@@ -84,6 +83,7 @@ public class Home extends javax.swing.JFrame {
             row[3] = list.get(i).getframe();
             row[4] = list.get(i).getlensa();
             row[5] = list.get(i).gettotal_harga();
+            row[6] = list.get(i).getuser_sno();
             model.addRow(row);
         }
         
@@ -121,7 +121,6 @@ public class Home extends javax.swing.JFrame {
         btnImage = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(1600, 500));
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel1.setText("Name Pelanggan");
@@ -169,17 +168,17 @@ public class Home extends javax.swing.JFrame {
         });
 
         jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
-        jLabel6.setText("Customer");
+        jLabel6.setText("Admin");
 
         jTable_Display_Pemesanan.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null}
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null}
             },
             new String [] {
-                "ID", "Nama Pelanggan", "Nomor", "Frame", "Lensa", "Total Harga"
+                "ID", "Nama Pelanggan", "Nomor", "Frame", "Lensa", "Total Harga", "Username Customer"
             }
         ));
         jTable_Display_Pemesanan.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -442,7 +441,7 @@ public class Home extends javax.swing.JFrame {
     }//GEN-LAST:event_jTable_Display_PemesananMouseClicked
 
     private void tambahActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tambahActionPerformed
-        Tambah field = new Tambah();
+        AdminTambah field = new AdminTambah();
         field.setVisible(true);
         setVisible(false);
     }//GEN-LAST:event_tambahActionPerformed
@@ -551,14 +550,18 @@ public class Home extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Home.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AdminHome.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Home.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AdminHome.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Home.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AdminHome.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Home.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AdminHome.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
@@ -567,7 +570,7 @@ public class Home extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Home().setVisible(true);
+                new AdminHome().setVisible(true);
             }
         });
     }
