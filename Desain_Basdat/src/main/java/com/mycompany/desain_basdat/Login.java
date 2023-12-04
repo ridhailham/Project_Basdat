@@ -56,6 +56,7 @@ public class Login extends javax.swing.JFrame {
         password = new javax.swing.JPasswordField();
         lbl_username = new javax.swing.JLabel();
         lbl_password = new javax.swing.JLabel();
+        SignUp = new javax.swing.JButton();
 
         jLabel6.setText("jLabel6");
 
@@ -155,6 +156,17 @@ public class Login extends javax.swing.JFrame {
         lbl_password.setBackground(new java.awt.Color(0, 204, 102));
         lbl_password.setForeground(new java.awt.Color(255, 255, 255));
 
+        SignUp.setBackground(new java.awt.Color(0, 204, 102));
+        SignUp.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        SignUp.setForeground(new java.awt.Color(255, 255, 255));
+        SignUp.setText("Sign Up");
+        SignUp.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
+        SignUp.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SignUpActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -175,7 +187,10 @@ public class Login extends javax.swing.JFrame {
                         .addComponent(lbl_username, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(lbl_password, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(login, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(jPanel2Layout.createSequentialGroup()
+                            .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(28, 28, 28)
+                            .addComponent(SignUp, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(108, Short.MAX_VALUE))
         );
@@ -202,9 +217,11 @@ public class Login extends javax.swing.JFrame {
                 .addComponent(lbl_password, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(login, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(24, 24, 24)
-                .addComponent(jLabel5)
-                .addContainerGap(82, Short.MAX_VALUE))
+                .addGap(42, 42, 42)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel5)
+                    .addComponent(SignUp, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -301,6 +318,15 @@ public class Login extends javax.swing.JFrame {
         lbl_password.setText("");
     }//GEN-LAST:event_passwordKeyReleased
 
+    private void SignUpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SignUpActionPerformed
+        
+        SignUp SignUpFrame = new SignUp();
+        SignUpFrame.setVisible(true);
+        SignUpFrame.pack();
+        SignUpFrame.setLocationRelativeTo(null);
+        this.dispose();
+    }//GEN-LAST:event_SignUpActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -338,6 +364,7 @@ public class Login extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton SignUp;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

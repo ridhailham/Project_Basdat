@@ -79,23 +79,32 @@ public class Tambah extends javax.swing.JFrame {
         lbl_image = new javax.swing.JLabel();
         btnImage = new javax.swing.JButton();
         lbl_frame_image = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setPreferredSize(new java.awt.Dimension(800, 650));
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel1.setText("Name Pelanggan");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(94, 142, 150, -1));
+        getContentPane().add(nama_pelanggan, new org.netbeans.lib.awtextra.AbsoluteConstraints(278, 142, 342, -1));
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel2.setText("Nomor Telfon/WA");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(94, 182, 150, -1));
+        getContentPane().add(nomor, new org.netbeans.lib.awtextra.AbsoluteConstraints(278, 182, 342, -1));
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel3.setText("Frame");
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(94, 222, 150, -1));
 
         jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel4.setText("Lensa");
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(94, 262, 150, -1));
 
         lensa.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Kosong", "Silinder", "Plus", "Minus", "Silinder & Minus", "Silinder & Plus" }));
+        getContentPane().add(lensa, new org.netbeans.lib.awtextra.AbsoluteConstraints(278, 262, -1, -1));
 
         frame.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Kosong", "Versace", "Dolce", "Levis", "Calvin", "Chanel", "Oakley" }));
         frame.setMinimumSize(new java.awt.Dimension(121, 22));
@@ -105,9 +114,11 @@ public class Tambah extends javax.swing.JFrame {
                 frameActionPerformed(evt);
             }
         });
+        getContentPane().add(frame, new org.netbeans.lib.awtextra.AbsoluteConstraints(278, 222, -1, -1));
 
         jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel5.setText("Total Harga");
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(94, 302, 150, -1));
 
         add.setText("Tambah");
         add.addActionListener(new java.awt.event.ActionListener() {
@@ -115,8 +126,10 @@ public class Tambah extends javax.swing.JFrame {
                 addActionPerformed(evt);
             }
         });
+        getContentPane().add(add, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 500, 101, 31));
 
         total_harga.setText("0");
+        getContentPane().add(total_harga, new org.netbeans.lib.awtextra.AbsoluteConstraints(278, 303, 149, 20));
 
         hitung_harga.setText("Hitung Harga");
         hitung_harga.addActionListener(new java.awt.event.ActionListener() {
@@ -124,6 +137,7 @@ public class Tambah extends javax.swing.JFrame {
                 hitung_hargaActionPerformed(evt);
             }
         });
+        getContentPane().add(hitung_harga, new org.netbeans.lib.awtextra.AbsoluteConstraints(445, 302, -1, -1));
 
         reset.setText("Reset");
         reset.setMaximumSize(new java.awt.Dimension(102, 23));
@@ -134,9 +148,12 @@ public class Tambah extends javax.swing.JFrame {
                 resetActionPerformed(evt);
             }
         });
+        getContentPane().add(reset, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 493, 110, 30));
+        getContentPane().add(lbl_hasil, new org.netbeans.lib.awtextra.AbsoluteConstraints(224, 478, 501, 25));
 
         jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
         jLabel6.setText("Tambah Pesanan");
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(223, 36, -1, -1));
 
         kembali.setText("Kembali");
         kembali.addActionListener(new java.awt.event.ActionListener() {
@@ -144,110 +161,26 @@ public class Tambah extends javax.swing.JFrame {
                 kembaliActionPerformed(evt);
             }
         });
+        getContentPane().add(kembali, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 20, 130, 30));
 
         lbl_image.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        getContentPane().add(lbl_image, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 360, 223, 111));
 
-        btnImage.setText("Choose");
+        btnImage.setText("Upload File");
         btnImage.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnImageActionPerformed(evt);
             }
         });
+        getContentPane().add(btnImage, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 400, 99, -1));
 
         lbl_frame_image.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        getContentPane().add(lbl_frame_image, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 360, 223, 111));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(94, 94, 94)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(34, 34, 34)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(lensa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(frame, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(nomor, javax.swing.GroupLayout.PREFERRED_SIZE, 342, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(nama_pelanggan, javax.swing.GroupLayout.PREFERRED_SIZE, 342, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(total_harga, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(hitung_harga)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(reset, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(add, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(29, 29, 29)
-                                .addComponent(lbl_hasil, javax.swing.GroupLayout.PREFERRED_SIZE, 501, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(0, 57, Short.MAX_VALUE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(44, 44, 44)
-                                .addComponent(lbl_frame_image, javax.swing.GroupLayout.PREFERRED_SIZE, 223, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(lbl_image, javax.swing.GroupLayout.PREFERRED_SIZE, 223, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(btnImage, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabel6)
-                        .addGap(78, 78, 78)
-                        .addComponent(kembali, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(33, 33, 33))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(36, 36, 36)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel6)
-                    .addComponent(kembali, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(42, 42, 42)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(nama_pelanggan, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(nomor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
-                    .addComponent(frame, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4)
-                    .addComponent(lensa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel5)
-                    .addComponent(total_harga, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(hitung_harga)
-                    .addComponent(reset, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnImage)
-                        .addGap(61, 61, 61)
-                        .addComponent(lbl_hasil, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(47, 47, 47))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lbl_frame_image, javax.swing.GroupLayout.DEFAULT_SIZE, 111, Short.MAX_VALUE)
-                            .addComponent(lbl_image, javax.swing.GroupLayout.DEFAULT_SIZE, 111, Short.MAX_VALUE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(add, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(53, 53, 53))))
-        );
+        jLabel7.setIcon(new javax.swing.ImageIcon("C:\\Users\\LENOVO\\Downloads\\backgroundhijau4.jpg")); // NOI18N
+        jLabel7.setText("jLabel7");
+        jLabel7.setPreferredSize(new java.awt.Dimension(800, 500));
+        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 820, 550));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -510,6 +443,7 @@ public class Tambah extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JButton kembali;
     private javax.swing.JLabel lbl_frame_image;
     private javax.swing.JLabel lbl_hasil;
