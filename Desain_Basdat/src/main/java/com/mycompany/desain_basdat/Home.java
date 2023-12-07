@@ -33,9 +33,9 @@ public class Home extends javax.swing.JFrame {
     String filename = null;
     byte[] person_image = null;
     
-    int harga_frame = 0;
-    int harga_lensa = 0;
-    int harga_akhir = 0;
+    int harga_frame;
+    int harga_lensa;
+    
     
     Object[] row = new Object[6];
     
@@ -112,12 +112,10 @@ public class Home extends javax.swing.JFrame {
         frame = new javax.swing.JComboBox<>();
         jLabel5 = new javax.swing.JLabel();
         total_harga = new javax.swing.JLabel();
-        lbl_hasil = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable_Display_Pemesanan = new javax.swing.JTable();
         tambah = new javax.swing.JButton();
-        updateBtn = new javax.swing.JButton();
         deleteBtn = new javax.swing.JButton();
         lbl_image = new javax.swing.JLabel();
         btnImage = new javax.swing.JButton();
@@ -126,6 +124,8 @@ public class Home extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         hitung_harga = new javax.swing.JButton();
         reset = new javax.swing.JButton();
+        updateBtn = new javax.swing.JButton();
+        lbl_hasil = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -135,12 +135,12 @@ public class Home extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel1.setText("Name Pelanggan");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(48, 142, 150, -1));
-        getContentPane().add(nama_pelanggan, new org.netbeans.lib.awtextra.AbsoluteConstraints(232, 142, 342, -1));
+        getContentPane().add(nama_pelanggan, new org.netbeans.lib.awtextra.AbsoluteConstraints(232, 142, 500, -1));
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel2.setText("Nomor Telfon/WA");
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(48, 182, 150, -1));
-        getContentPane().add(nomor, new org.netbeans.lib.awtextra.AbsoluteConstraints(232, 182, 342, -1));
+        getContentPane().add(nomor, new org.netbeans.lib.awtextra.AbsoluteConstraints(232, 182, 500, -1));
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel3.setText("Frame");
@@ -150,7 +150,7 @@ public class Home extends javax.swing.JFrame {
         jLabel4.setText("Lensa");
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(48, 262, 150, -1));
 
-        lensa.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Kosong", "Silinder", "Plus", "Minus", "Silinder & Minus", "Silinder & Plus" }));
+        lensa.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Kosong", "Silinder [Rp250000]", "Plus [Rp150000]", "Minus [Rp200000]", "Silinder & Minus [Rp400000]", "Silinder & Plus [Rp350000]" }));
         lensa.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 lensaActionPerformed(evt);
@@ -158,18 +158,17 @@ public class Home extends javax.swing.JFrame {
         });
         getContentPane().add(lensa, new org.netbeans.lib.awtextra.AbsoluteConstraints(232, 262, -1, -1));
 
-        frame.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Kosong", "Versace", "Dolce", "Levis", "Calvin", "Chanel", "Oakley" }));
+        frame.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Kosong ", "Versace [Rp320000]", "Dolce [Rp220000]", "Levis [Rp400000]", "Calvin [Rp350000]", "Chanel [Rp190000]", "Oakley [Rp150000]" }));
         frame.setMinimumSize(new java.awt.Dimension(121, 22));
         frame.setPreferredSize(new java.awt.Dimension(121, 22));
-        getContentPane().add(frame, new org.netbeans.lib.awtextra.AbsoluteConstraints(232, 222, -1, -1));
+        getContentPane().add(frame, new org.netbeans.lib.awtextra.AbsoluteConstraints(232, 222, 180, -1));
 
         jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel5.setText("Total Harga");
         getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(48, 302, 150, -1));
 
         total_harga.setText("0");
-        getContentPane().add(total_harga, new org.netbeans.lib.awtextra.AbsoluteConstraints(232, 303, 209, 20));
-        getContentPane().add(lbl_hasil, new org.netbeans.lib.awtextra.AbsoluteConstraints(428, 474, 501, 25));
+        getContentPane().add(total_harga, new org.netbeans.lib.awtextra.AbsoluteConstraints(232, 303, 280, 20));
 
         jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
         jLabel6.setText("Customer");
@@ -186,6 +185,10 @@ public class Home extends javax.swing.JFrame {
                 "ID", "Nama Pelanggan", "Nomor", "Frame", "Lensa", "Total Harga"
             }
         ));
+        jTable_Display_Pemesanan.setToolTipText("");
+        jTable_Display_Pemesanan.setAutoscrolls(false);
+        jTable_Display_Pemesanan.setColumnSelectionAllowed(true);
+        jTable_Display_Pemesanan.setName(""); // NOI18N
         jTable_Display_Pemesanan.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jTable_Display_PemesananMouseClicked(evt);
@@ -193,7 +196,7 @@ public class Home extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(jTable_Display_Pemesanan);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(619, 25, 680, 179));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(829, 25, 560, 179));
 
         tambah.setText("Tambah");
         tambah.addActionListener(new java.awt.event.ActionListener() {
@@ -201,15 +204,7 @@ public class Home extends javax.swing.JFrame {
                 tambahActionPerformed(evt);
             }
         });
-        getContentPane().add(tambah, new org.netbeans.lib.awtextra.AbsoluteConstraints(1183, 254, 107, 31));
-
-        updateBtn.setText("Update");
-        updateBtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                updateBtnActionPerformed(evt);
-            }
-        });
-        getContentPane().add(updateBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(48, 406, 101, 31));
+        getContentPane().add(tambah, new org.netbeans.lib.awtextra.AbsoluteConstraints(1280, 250, 107, 31));
 
         deleteBtn.setText("Delete");
         deleteBtn.addActionListener(new java.awt.event.ActionListener() {
@@ -217,10 +212,10 @@ public class Home extends javax.swing.JFrame {
                 deleteBtnActionPerformed(evt);
             }
         });
-        getContentPane().add(deleteBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(1183, 338, 107, 31));
+        getContentPane().add(deleteBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(1280, 330, 107, 31));
 
         lbl_image.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        getContentPane().add(lbl_image, new org.netbeans.lib.awtextra.AbsoluteConstraints(232, 337, 176, 100));
+        getContentPane().add(lbl_image, new org.netbeans.lib.awtextra.AbsoluteConstraints(232, 337, 200, 80));
 
         btnImage.setText("Choose");
         btnImage.addActionListener(new java.awt.event.ActionListener() {
@@ -236,10 +231,10 @@ public class Home extends javax.swing.JFrame {
                 LogOutActionPerformed(evt);
             }
         });
-        getContentPane().add(LogOut, new org.netbeans.lib.awtextra.AbsoluteConstraints(1330, 30, 130, 30));
+        getContentPane().add(LogOut, new org.netbeans.lib.awtextra.AbsoluteConstraints(1410, 30, 120, 40));
 
         lbl_frame_image.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        getContentPane().add(lbl_frame_image, new org.netbeans.lib.awtextra.AbsoluteConstraints(724, 254, 350, 197));
+        getContentPane().add(lbl_frame_image, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 250, 400, 197));
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setPreferredSize(new java.awt.Dimension(400, 500));
@@ -261,33 +256,53 @@ public class Home extends javax.swing.JFrame {
             }
         });
 
+        updateBtn.setText("Update");
+        updateBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                updateBtnActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(443, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(reset, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(hitung_harga))
-                .addGap(45, 45, 45))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(hitung_harga))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(47, 47, 47)
+                        .addComponent(updateBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(59, 59, 59)
+                        .addComponent(lbl_hasil, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 64, Short.MAX_VALUE)
+                        .addComponent(reset, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(77, 77, 77))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(309, Short.MAX_VALUE)
-                .addComponent(hitung_harga)
-                .addGap(72, 72, 72)
-                .addComponent(reset, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(64, 64, 64))
+                .addContainerGap(306, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(lbl_hasil, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(hitung_harga)
+                        .addGap(83, 83, 83)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(updateBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(reset, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(10, 10, 10)))
+                .addGap(46, 46, 46))
         );
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 590, -1));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 800, -1));
 
         jLabel8.setIcon(new javax.swing.ImageIcon("C:\\Users\\LENOVO\\Downloads\\backgroundhijau4.jpg")); // NOI18N
         jLabel8.setText("jLabel7");
         jLabel8.setPreferredSize(new java.awt.Dimension(800, 500));
-        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 0, 890, 550));
+        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 0, 760, 550));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -295,37 +310,37 @@ public class Home extends javax.swing.JFrame {
     private void hitung_hargaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hitung_hargaActionPerformed
         if(frame.getSelectedItem().toString().equals("Kosong")) {
             harga_frame = 0;
-        } else if(frame.getSelectedItem().toString().equals("Versace")) {
+        } else if(frame.getSelectedItem().toString().equals("Versace [Rp320000]")) {
             harga_frame = 320000;
-        } else if(frame.getSelectedItem().toString().equals("Dolce")) {
+        } else if(frame.getSelectedItem().toString().equals("Dolce [Rp220000]")) {
             harga_frame = 220000;
-        } else if(frame.getSelectedItem().toString().equals("Levis")) {
+        } else if(frame.getSelectedItem().toString().equals("Levis [Rp400000]")) {
             harga_frame = 400000;
-        } else if(frame.getSelectedItem().toString().equals("Calvin")) {
+        } else if(frame.getSelectedItem().toString().equals("Calvin [Rp350000]")) {
             harga_frame = 350000;
-        } else if(frame.getSelectedItem().toString().equals("Chanel")) {
+        } else if(frame.getSelectedItem().toString().equals("Chanel [Rp190000]")) {
             harga_frame = 190000;
-        } else if(frame.getSelectedItem().toString().equals("Oakley")) {
+        } else if(frame.getSelectedItem().toString().equals("Oakley [Rp150000]")) {
             harga_frame = 150000;
         }
                 
                 
         if(lensa.getSelectedItem().toString().equals("Kosong")) {
             harga_lensa = 0;
-        } else if(frame.getSelectedItem().toString().equals("Silinder")) {
+        } else if(frame.getSelectedItem().toString().equals("Silinder [Rp250000]")) {
             harga_lensa = 250000;
-        } else if(frame.getSelectedItem().toString().equals("Minus")) {
+        } else if(frame.getSelectedItem().toString().equals("Minus [Rp200000]")) {
             harga_lensa = 200000;
-        } else if(frame.getSelectedItem().toString().equals("Plus")) {
+        } else if(frame.getSelectedItem().toString().equals("Plus [Rp150000]")) {
             harga_lensa = 150000;
-        } else if(frame.getSelectedItem().toString().equals("Silinder & Minus")) {
+        } else if(frame.getSelectedItem().toString().equals("Silinder & Minus [Rp400000]")) {
             harga_lensa = 400000;
-        } else if(frame.getSelectedItem().toString().equals("Silinder & Plus")) {
+        } else if(frame.getSelectedItem().toString().equals("Silinder & Plus [Rp350000]")) {
             harga_lensa = 350000;
         }
         
         
-        harga_akhir = harga_frame + harga_lensa;
+        int harga_akhir = harga_frame + harga_lensa;
         String hasil = String.valueOf(harga_akhir);            
         total_harga.setText(hasil);
     }//GEN-LAST:event_hitung_hargaActionPerformed
@@ -351,27 +366,27 @@ public class Home extends javax.swing.JFrame {
                 frame.setSelectedIndex(0);
                 harga_frame = 0;
                 break;
-            case "Versace":
+            case "Versace [Rp320000]":
                 frame.setSelectedIndex(1);
                 harga_frame = 320000;
                 break;
-            case "Dolce":
+            case "Dolce [Rp220000]":
                 frame.setSelectedIndex(2);
                 harga_frame = 220000;
                 break;
-            case "Levis":
+            case "Levis [Rp400000]":
                 frame.setSelectedIndex(3);
                 harga_frame = 400000;
                 break;
-            case "Calvin":
+            case "Calvin [Rp350000]":
                 frame.setSelectedIndex(4);
                 harga_frame = 350000;
                 break;
-            case "Chanel":
+            case "Chanel [Rp190000]":
                 frame.setSelectedIndex(5);
                 harga_frame = 190000;
                 break;
-            case "Oakley":
+            case "Oakley [Rp150000]":
                 frame.setSelectedIndex(6);
                 harga_frame = 150000;
                 break;
@@ -385,23 +400,23 @@ public class Home extends javax.swing.JFrame {
                 lensa.setSelectedIndex(0);
                 harga_lensa = 0;
                 break;
-            case "Silinder":
+            case "Silinder [Rp250000]":
                 lensa.setSelectedIndex(1);
                 harga_lensa = 250000;
                 break;
-            case "Minus":
+            case "Minus [Rp200000]":
                 lensa.setSelectedIndex(2);
                 harga_lensa = 200000;
                 break;
-            case "Plus":
+            case "Plus [Rp150000]":
                 lensa.setSelectedIndex(3);
                 harga_lensa = 150000;
                 break;
-            case "Silinder & Minus":
+            case "Silinder & Minus [Rp400000]":
                 lensa.setSelectedIndex(4);
                 harga_lensa = 400000;
                 break;
-            case "Silinder & Plus":
+            case "Silinder & Plus [Rp350000]":
                 lensa.setSelectedIndex(5);
                 harga_lensa = 350000;
                 break;

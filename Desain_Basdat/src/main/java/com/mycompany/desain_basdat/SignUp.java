@@ -4,6 +4,14 @@
  */
 package com.mycompany.desain_basdat;
 
+import static com.mycompany.desain_basdat.Login.idUser;
+import java.awt.event.ActionEvent;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author LENOVO
@@ -28,26 +36,25 @@ public class SignUp extends javax.swing.JFrame {
 
         jLabel3 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        username = new javax.swing.JTextField();
         jSeparator1 = new javax.swing.JSeparator();
+        jLabel2 = new javax.swing.JLabel();
         jSeparator2 = new javax.swing.JSeparator();
-        jLabel4 = new javax.swing.JLabel();
-        jTextField3 = new javax.swing.JTextField();
-        jSeparator3 = new javax.swing.JSeparator();
-        jLabel5 = new javax.swing.JLabel();
-        jTextField4 = new javax.swing.JTextField();
-        jSeparator4 = new javax.swing.JSeparator();
-        jLabel6 = new javax.swing.JLabel();
-        jTextField5 = new javax.swing.JTextField();
-        jSeparator5 = new javax.swing.JSeparator();
-        jButton1 = new javax.swing.JButton();
+        signUp = new javax.swing.JButton();
         jLabel8 = new javax.swing.JLabel();
         jButton2 = new javax.swing.JButton();
-        jPasswordField1 = new javax.swing.JPasswordField();
-        jLabel7 = new javax.swing.JLabel();
+        confirm_password = new javax.swing.JPasswordField();
+        jLabel4 = new javax.swing.JLabel();
+        password = new javax.swing.JPasswordField();
+        jSeparator3 = new javax.swing.JSeparator();
+        lbl_confirmPassword = new javax.swing.JLabel();
+        lbl_password = new javax.swing.JLabel();
+        lbl_username = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMinimumSize(new java.awt.Dimension(800, 500));
+        setPreferredSize(new java.awt.Dimension(800, 500));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
@@ -58,84 +65,47 @@ public class SignUp extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Username");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 80, -1, -1));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 120, -1, 20));
+
+        username.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                usernameActionPerformed(evt);
+            }
+        });
+        getContentPane().add(username, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 150, 506, 20));
+
+        jSeparator1.setBackground(new java.awt.Color(255, 255, 255));
+        jSeparator1.setForeground(new java.awt.Color(255, 255, 255));
+        getContentPane().add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 180, 506, 10));
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setText("Password");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 150, 83, -1));
+        jLabel2.setText("Confirm Password");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 310, 150, 20));
 
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        jSeparator2.setBackground(new java.awt.Color(255, 255, 255));
+        jSeparator2.setForeground(new java.awt.Color(255, 255, 255));
+        getContentPane().add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 370, 510, 10));
+
+        signUp.setBackground(new java.awt.Color(0, 204, 102));
+        signUp.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        signUp.setForeground(new java.awt.Color(255, 255, 255));
+        signUp.setText("Sign Up");
+        signUp.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
+        signUp.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                signUpActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 110, 506, -1));
-
-        jSeparator1.setBackground(new java.awt.Color(0, 0, 0));
-        jSeparator1.setForeground(new java.awt.Color(0, 0, 0));
-        getContentPane().add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 140, 506, 10));
-
-        jSeparator2.setBackground(new java.awt.Color(0, 0, 0));
-        jSeparator2.setForeground(new java.awt.Color(0, 0, 0));
-        getContentPane().add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 210, 510, 10));
-
-        jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel4.setText("Full Name");
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 220, 88, -1));
-
-        jTextField3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField3ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 250, 506, -1));
-
-        jSeparator3.setBackground(new java.awt.Color(0, 0, 0));
-        jSeparator3.setForeground(new java.awt.Color(0, 0, 0));
-        getContentPane().add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 280, 506, 10));
-
-        jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel5.setText("Phone");
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 290, 96, 18));
-
-        jTextField4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField4ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 320, 506, -1));
-
-        jSeparator4.setBackground(new java.awt.Color(0, 0, 0));
-        jSeparator4.setForeground(new java.awt.Color(0, 0, 0));
-        getContentPane().add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 350, 506, 10));
-
-        jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel6.setText("Alamat");
-        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 360, 63, -1));
-        getContentPane().add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 390, 506, -1));
-
-        jSeparator5.setBackground(new java.awt.Color(0, 0, 0));
-        jSeparator5.setForeground(new java.awt.Color(0, 0, 0));
-        getContentPane().add(jSeparator5, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 420, 506, 10));
-
-        jButton1.setBackground(new java.awt.Color(0, 102, 51));
-        jButton1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("Sign Up");
-        jButton1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 440, 120, 40));
+        getContentPane().add(signUp, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 410, 120, 40));
 
         jLabel8.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
         jLabel8.setText("I have account");
-        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 450, 100, 20));
+        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 410, 100, 30));
 
-        jButton2.setBackground(new java.awt.Color(0, 102, 51));
-        jButton2.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jButton2.setBackground(new java.awt.Color(0, 204, 102));
+        jButton2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jButton2.setForeground(new java.awt.Color(255, 255, 255));
         jButton2.setText("Sign In");
         jButton2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
@@ -144,28 +114,43 @@ public class SignUp extends javax.swing.JFrame {
                 jButton2ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 450, 70, 20));
-        getContentPane().add(jPasswordField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 180, 510, -1));
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 410, 70, 30));
 
-        jLabel7.setIcon(new javax.swing.ImageIcon("C:\\Users\\LENOVO\\Downloads\\backgroundhijau4.jpg")); // NOI18N
-        jLabel7.setText("jLabel7");
-        jLabel7.setPreferredSize(new java.awt.Dimension(800, 500));
-        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        confirm_password.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                confirm_passwordActionPerformed(evt);
+            }
+        });
+        getContentPane().add(confirm_password, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 340, 500, 20));
+
+        jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel4.setText("Password");
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 210, 83, 20));
+
+        password.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                passwordActionPerformed(evt);
+            }
+        });
+        getContentPane().add(password, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 240, 500, 20));
+
+        jSeparator3.setBackground(new java.awt.Color(255, 255, 255));
+        jSeparator3.setForeground(new java.awt.Color(255, 255, 255));
+        getContentPane().add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 270, 510, 10));
+        getContentPane().add(lbl_confirmPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 380, 130, 20));
+        getContentPane().add(lbl_password, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 280, 140, 20));
+        getContentPane().add(lbl_username, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 190, 130, 20));
+
+        jPanel1.setBackground(new java.awt.Color(0, 204, 102));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 800, 500));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField4ActionPerformed
+    private void usernameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_usernameActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField4ActionPerformed
-
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
-
-    private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField3ActionPerformed
+    }//GEN-LAST:event_usernameActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         Login LoginFrame = new Login();
@@ -174,6 +159,91 @@ public class SignUp extends javax.swing.JFrame {
         LoginFrame.setLocationRelativeTo(null);
         this.dispose();
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void confirm_passwordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_confirm_passwordActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_confirm_passwordActionPerformed
+
+    private void passwordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_passwordActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_passwordActionPerformed
+
+    private void signUpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_signUpActionPerformed
+        if(username.getText().trim().isEmpty() && confirm_password.getText().trim().isEmpty()){
+            lbl_username.setText("Username is Empty");
+            lbl_password.setText("Password is Empty");
+            lbl_confirmPassword.setText("Confirm Password is Empty");
+            return;
+        } else if(username.getText().trim().isEmpty() && password.getText().trim().isEmpty()){
+            lbl_username.setText("Username is Empty");
+            lbl_password.setText("Password is Empty");
+            return;
+        } else if(username.getText().trim().isEmpty() && confirm_password.getText().trim().isEmpty()){
+            lbl_username.setText("Username is Empty");
+            lbl_confirmPassword.setText("Confirm Password is Empty");
+            return;
+        } else if(password.getText().trim().isEmpty() && confirm_password.getText().trim().isEmpty()){
+            lbl_password.setText("Username is Empty");
+            lbl_confirmPassword.setText("Confirm Password is Empty");
+            return;
+        } else if(username.getText().trim().isEmpty()) {
+            lbl_username.setText("Username is Empty");
+            return;
+        } else if(confirm_password.getText().trim().isEmpty()) {
+            lbl_password.setText("Password is Empty");
+            return;
+        } else if(lbl_confirmPassword.getText().trim().isEmpty()) {
+            lbl_password.setText("Confirm Password is Empty");
+            return;
+        }
+        
+        
+        try {
+            Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
+            String url = "jdbc:sqlserver://localhost:1433;" +
+                         "databaseName=Kacamata;" +
+                         "user=Ridha;" +
+                         "password=kelompok7;" +
+                         "encrypt=true;" +
+                         "trustServerCertificate=true;" + "loginTimeout=30;";
+            Connection con = DriverManager.getConnection(url);
+
+            
+            if (!confirm_password.getText().equals(password.getText())) {
+                JOptionPane.showMessageDialog(null, "Password and Confirm Password is not same");
+                return;
+            }
+
+            // Check if the username is already taken
+            String checkUsernameQuery = "SELECT * FROM [User] WHERE username=?";
+            PreparedStatement checkUsernameStmt = con.prepareStatement(checkUsernameQuery);
+            checkUsernameStmt.setString(1, username.getText());
+            ResultSet usernameResultSet = checkUsernameStmt.executeQuery();
+
+            if (usernameResultSet.next()) {
+                JOptionPane.showMessageDialog(null, "Username is already taken");
+                return;
+            }
+
+            // If username is available, proceed with registration
+            String insertQuery = "INSERT INTO [User] (username, password) VALUES (?, ?)";
+            PreparedStatement insertStmt = con.prepareStatement(insertQuery);
+            insertStmt.setString(1, username.getText());
+            insertStmt.setString(2, confirm_password.getText());
+            insertStmt.executeUpdate();
+
+            JOptionPane.showMessageDialog(null, "Registration successful. You can now log in.");
+
+            // You can optionally clear the registration form fields here
+            username.setText("");
+            confirm_password.setText("");
+
+            con.close(); // Close the database connection
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e);
+        }
+
+    }//GEN-LAST:event_signUpActionPerformed
 
     /**
      * @param args the command line arguments
@@ -212,25 +282,22 @@ public class SignUp extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    private javax.swing.JPasswordField confirm_password;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
-    private javax.swing.JPasswordField jPasswordField1;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
-    private javax.swing.JSeparator jSeparator4;
-    private javax.swing.JSeparator jSeparator5;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
+    private javax.swing.JLabel lbl_confirmPassword;
+    private javax.swing.JLabel lbl_password;
+    private javax.swing.JLabel lbl_username;
+    private javax.swing.JPasswordField password;
+    private javax.swing.JButton signUp;
+    private javax.swing.JTextField username;
     // End of variables declaration//GEN-END:variables
 }

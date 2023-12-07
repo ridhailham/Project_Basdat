@@ -150,7 +150,7 @@ public class AdminHome extends javax.swing.JFrame {
         jLabel4.setText("Lensa");
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(48, 274, 150, -1));
 
-        lensa.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Kosong", "Silinder", "Plus", "Minus", "Silinder & Minus", "Silinder & Plus" }));
+        lensa.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Kosong", "Silinder [Rp250000]", "Plus [Rp200000]", "Minus [Rp150000]", "Silinder & Minus [Rp400000]", "Silinder & Plus [Rp350000]" }));
         lensa.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 lensaActionPerformed(evt);
@@ -158,7 +158,7 @@ public class AdminHome extends javax.swing.JFrame {
         });
         getContentPane().add(lensa, new org.netbeans.lib.awtextra.AbsoluteConstraints(232, 274, -1, -1));
 
-        frame.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Kosong", "Versace", "Dolce", "Levis", "Calvin", "Chanel", "Oakley" }));
+        frame.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Kosong", "Versace [Rp320000]", "Dolce [Rp220000]", "Levis [Rp400000]", "Calvin [Rp350000]", "Chanel [Rp190000]", "Oakley [Rp150000]" }));
         frame.setMinimumSize(new java.awt.Dimension(121, 22));
         frame.setPreferredSize(new java.awt.Dimension(121, 22));
         getContentPane().add(frame, new org.netbeans.lib.awtextra.AbsoluteConstraints(232, 234, -1, -1));
@@ -294,32 +294,32 @@ public class AdminHome extends javax.swing.JFrame {
     private void hitung_hargaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hitung_hargaActionPerformed
         if(frame.getSelectedItem().toString().equals("Kosong")) {
             harga_frame = 0;
-        } else if(frame.getSelectedItem().toString().equals("Versace")) {
+        } else if(frame.getSelectedItem().toString().equals("Versace [Rp320000]")) {
             harga_frame = 320000;
-        } else if(frame.getSelectedItem().toString().equals("Dolce")) {
+        } else if(frame.getSelectedItem().toString().equals("Dolce [Rp220000")) {
             harga_frame = 220000;
-        } else if(frame.getSelectedItem().toString().equals("Levis")) {
+        } else if(frame.getSelectedItem().toString().equals("Levis [Rp400000]")) {
             harga_frame = 400000;
-        } else if(frame.getSelectedItem().toString().equals("Calvin")) {
+        } else if(frame.getSelectedItem().toString().equals("Calvin [Rp350000]")) {
             harga_frame = 350000;
-        } else if(frame.getSelectedItem().toString().equals("Chanel")) {
+        } else if(frame.getSelectedItem().toString().equals("Chanel [Rp190000]")) {
             harga_frame = 190000;
-        } else if(frame.getSelectedItem().toString().equals("Oakley")) {
+        } else if(frame.getSelectedItem().toString().equals("Oakley [Rp150000]")) {
             harga_frame = 150000;
         }
                 
                 
         if(lensa.getSelectedItem().toString().equals("Kosong")) {
             harga_lensa = 0;
-        } else if(frame.getSelectedItem().toString().equals("Silinder")) {
+        } else if(frame.getSelectedItem().toString().equals("Silinder [Rp250000]")) {
             harga_lensa = 250000;
-        } else if(frame.getSelectedItem().toString().equals("Minus")) {
+        } else if(frame.getSelectedItem().toString().equals("Minus [Rp200000]")) {
             harga_lensa = 200000;
-        } else if(frame.getSelectedItem().toString().equals("Plus")) {
+        } else if(frame.getSelectedItem().toString().equals("Plus [Rp150000]")) {
             harga_lensa = 150000;
-        } else if(frame.getSelectedItem().toString().equals("Silinder & Minus")) {
+        } else if(frame.getSelectedItem().toString().equals("Silinder & Minus [Rp400000]")) {
             harga_lensa = 400000;
-        } else if(frame.getSelectedItem().toString().equals("Silinder & Plus")) {
+        } else if(frame.getSelectedItem().toString().equals("Silinder & Plus [Rp350000]")) {
             harga_lensa = 350000;
         }
         
@@ -350,27 +350,27 @@ public class AdminHome extends javax.swing.JFrame {
                 frame.setSelectedIndex(0);
                 harga_frame = 0;
                 break;
-            case "Versace":
+            case "Versace [Rp320000]":
                 frame.setSelectedIndex(1);
                 harga_frame = 320000;
                 break;
-            case "Dolce":
+            case "Dolce [Rp220000]":
                 frame.setSelectedIndex(2);
                 harga_frame = 220000;
                 break;
-            case "Levis":
+            case "Levis [Rp400000]":
                 frame.setSelectedIndex(3);
                 harga_frame = 400000;
                 break;
-            case "Calvin":
+            case "Calvin [Rp350000]":
                 frame.setSelectedIndex(4);
                 harga_frame = 350000;
                 break;
-            case "Chanel":
+            case "Chanel [Rp190000]":
                 frame.setSelectedIndex(5);
                 harga_frame = 190000;
                 break;
-            case "Oakley":
+            case "Oakley [Rp150000]":
                 frame.setSelectedIndex(6);
                 harga_frame = 150000;
                 break;
@@ -384,23 +384,23 @@ public class AdminHome extends javax.swing.JFrame {
                 lensa.setSelectedIndex(0);
                 harga_lensa = 0;
                 break;
-            case "Silinder":
+            case "Silinder [Rp250000]":
                 lensa.setSelectedIndex(1);
                 harga_lensa = 250000;
                 break;
-            case "Minus":
+            case "Minus [Rp200000]":
                 lensa.setSelectedIndex(2);
                 harga_lensa = 200000;
                 break;
-            case "Plus":
+            case "Plus [Rp150000]":
                 lensa.setSelectedIndex(3);
                 harga_lensa = 150000;
                 break;
-            case "Silinder & Minus":
+            case "Silinder & Minus [Rp400000]":
                 lensa.setSelectedIndex(4);
                 harga_lensa = 400000;
                 break;
-            case "Silinder & Plus":
+            case "Silinder & Plus [Rp350000]":
                 lensa.setSelectedIndex(5);
                 harga_lensa = 350000;
                 break;
@@ -411,7 +411,7 @@ public class AdminHome extends javax.swing.JFrame {
         
         String selectedText = pemesananList().get(i).getframe();
         
-        if(selectedText.equals("Versace")) {
+        if(selectedText.equals("Versace [Rp320000]")) {
             String pathGambar = "C:\\Users\\LENOVO\\Documents\\NetBeansProjects\\Desain_Basdat\\src\\main\\java\\com\\mycompany\\desain_basdat\\Versace.jpeg"; // Ganti dengan path gambar yang sesuai
 
             // Coba baca gambar dari file dan atur sebagai ikon pada JLabel
@@ -422,7 +422,7 @@ public class AdminHome extends javax.swing.JFrame {
             } catch (IOException e) {
                 e.printStackTrace();
             }
-        } else if(selectedText.equals("Dolce")) {
+        } else if(selectedText.equals("Dolce [Rp220000]")) {
             String pathGambar = "C:\\Users\\LENOVO\\Documents\\NetBeansProjects\\Desain_Basdat\\src\\main\\java\\com\\mycompany\\desain_basdat\\Dolce.jpeg"; // Ganti dengan path gambar yang sesuai
 
             // Coba baca gambar dari file dan atur sebagai ikon pada JLabel
@@ -433,7 +433,7 @@ public class AdminHome extends javax.swing.JFrame {
             } catch (IOException e) {
                 e.printStackTrace();
             }
-        } else if(selectedText.equals("Levis")) {
+        } else if(selectedText.equals("Levis [Rp400000]")) {
             String pathGambar = "C:\\Users\\LENOVO\\Documents\\NetBeansProjects\\Desain_Basdat\\src\\main\\java\\com\\mycompany\\desain_basdat\\Levis.png"; // Ganti dengan path gambar yang sesuai
 
             // Coba baca gambar dari file dan atur sebagai ikon pada JLabel
@@ -444,7 +444,7 @@ public class AdminHome extends javax.swing.JFrame {
             } catch (IOException e) {
                 e.printStackTrace();
             }
-        } else if(selectedText.equals("Calvin")) {
+        } else if(selectedText.equals("Calvin [Rp350000]")) {
             String pathGambar = "C:\\Users\\LENOVO\\Documents\\NetBeansProjects\\Desain_Basdat\\src\\main\\java\\com\\mycompany\\desain_basdat\\Calvin.jpeg"; // Ganti dengan path gambar yang sesuai
 
             // Coba baca gambar dari file dan atur sebagai ikon pada JLabel
@@ -455,7 +455,7 @@ public class AdminHome extends javax.swing.JFrame {
             } catch (IOException e) {
                 e.printStackTrace();
             }
-        } else if(selectedText.equals("Chanel")) {
+        } else if(selectedText.equals("Chanel [Rp190000]")) {
             String pathGambar = "C:\\Users\\LENOVO\\Documents\\NetBeansProjects\\Desain_Basdat\\src\\main\\java\\com\\mycompany\\desain_basdat\\Chanel.jpeg"; // Ganti dengan path gambar yang sesuai
 
             // Coba baca gambar dari file dan atur sebagai ikon pada JLabel
@@ -466,7 +466,7 @@ public class AdminHome extends javax.swing.JFrame {
             } catch (IOException e) {
                 e.printStackTrace();
             }
-        } else if(selectedText.equals("Oakley")) {
+        } else if(selectedText.equals("Oakley [Rp150000]")) {
             String pathGambar = "C:\\Users\\LENOVO\\Documents\\NetBeansProjects\\Desain_Basdat\\src\\main\\java\\com\\mycompany\\desain_basdat\\Oakley.jpeg"; // Ganti dengan path gambar yang sesuai
 
             // Coba baca gambar dari file dan atur sebagai ikon pada JLabel

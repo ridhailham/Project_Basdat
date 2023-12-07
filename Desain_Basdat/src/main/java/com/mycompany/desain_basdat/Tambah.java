@@ -229,35 +229,33 @@ public class Tambah extends javax.swing.JFrame {
     private void hitung_hargaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hitung_hargaActionPerformed
         if(frame.getSelectedItem().toString().equals("Kosong")) {
             harga_frame = 0;
-        } else if(frame.getSelectedItem().toString().equals("Versace")) {
-                harga_frame = 320000;
-        } else if(frame.getSelectedItem().toString().equals("Dolce")) {
-                harga_frame = 220000;
-        } else if(frame.getSelectedItem().toString().equals("Levis")) {
+        } else if(frame.getSelectedItem().toString().equals("Versace [Rp320000]")) {
+            harga_frame = 320000;
+        } else if(frame.getSelectedItem().toString().equals("Dolce [Rp220000")) {
+            harga_frame = 220000;
+        } else if(frame.getSelectedItem().toString().equals("Levis [Rp400000]")) {
             harga_frame = 400000;
-        } else if(frame.getSelectedItem().toString().equals("Calvin")) {
+        } else if(frame.getSelectedItem().toString().equals("Calvin [Rp350000]")) {
             harga_frame = 350000;
-        } else if(frame.getSelectedItem().toString().equals("Chanel")) {
+        } else if(frame.getSelectedItem().toString().equals("Chanel [Rp190000]")) {
             harga_frame = 190000;
-        } else if(frame.getSelectedItem().toString().equals("Oakley")) {
+        } else if(frame.getSelectedItem().toString().equals("Oakley [Rp150000]")) {
             harga_frame = 150000;
         }
                 
                 
-        if(frame.getSelectedItem().toString().equals("Kosong")) {
+        if(lensa.getSelectedItem().toString().equals("Kosong")) {
             harga_lensa = 0;
-        } else if(frame.getSelectedItem().toString().equals("Versace")) {
-            harga_lensa = 320000;
-        } else if(frame.getSelectedItem().toString().equals("Dolce")) {
-            harga_lensa = 220000;
-        } else if(frame.getSelectedItem().toString().equals("Levis")) {
-            harga_lensa = 400000;
-        } else if(frame.getSelectedItem().toString().equals("Calvin")) {
-            harga_lensa = 350000;
-        } else if(frame.getSelectedItem().toString().equals("Chanel")) {
-            harga_lensa = 190000;
-        } else if(frame.getSelectedItem().toString().equals("Oakley")) {
+        } else if(frame.getSelectedItem().toString().equals("Silinder [Rp250000]")) {
+            harga_lensa = 250000;
+        } else if(frame.getSelectedItem().toString().equals("Minus [Rp200000]")) {
+            harga_lensa = 200000;
+        } else if(frame.getSelectedItem().toString().equals("Plus [Rp150000]")) {
             harga_lensa = 150000;
+        } else if(frame.getSelectedItem().toString().equals("Silinder & Minus [Rp400000]")) {
+            harga_lensa = 400000;
+        } else if(frame.getSelectedItem().toString().equals("Silinder & Plus [Rp350000]")) {
+            harga_lensa = 350000;
         }
                 
         harga_akhir = harga_frame + harga_lensa;
