@@ -161,7 +161,7 @@ public class AdminHome extends javax.swing.JFrame {
         frame.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Kosong", "Versace [Rp320000]", "Dolce [Rp220000]", "Levis [Rp400000]", "Calvin [Rp350000]", "Chanel [Rp190000]", "Oakley [Rp150000]" }));
         frame.setMinimumSize(new java.awt.Dimension(121, 22));
         frame.setPreferredSize(new java.awt.Dimension(121, 22));
-        getContentPane().add(frame, new org.netbeans.lib.awtextra.AbsoluteConstraints(232, 234, -1, -1));
+        getContentPane().add(frame, new org.netbeans.lib.awtextra.AbsoluteConstraints(232, 234, 190, -1));
 
         jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel5.setText("Total Harga");

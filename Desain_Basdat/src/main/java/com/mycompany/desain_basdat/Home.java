@@ -161,7 +161,7 @@ public class Home extends javax.swing.JFrame {
         frame.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Kosong ", "Versace [Rp320000]", "Dolce [Rp220000]", "Levis [Rp400000]", "Calvin [Rp350000]", "Chanel [Rp190000]", "Oakley [Rp150000]" }));
         frame.setMinimumSize(new java.awt.Dimension(121, 22));
         frame.setPreferredSize(new java.awt.Dimension(121, 22));
-        getContentPane().add(frame, new org.netbeans.lib.awtextra.AbsoluteConstraints(232, 222, 180, -1));
+        getContentPane().add(frame, new org.netbeans.lib.awtextra.AbsoluteConstraints(232, 222, 190, -1));
 
         jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel5.setText("Total Harga");
@@ -428,7 +428,7 @@ public class Home extends javax.swing.JFrame {
         
         String selectedText = pemesananList().get(i).getframe();
         
-        if(selectedText.equals("Versace")) {
+        if(selectedText.equals("Versace [Rp320000]")) {
             String pathGambar = "C:\\Users\\LENOVO\\Documents\\NetBeansProjects\\Desain_Basdat\\src\\main\\java\\com\\mycompany\\desain_basdat\\Versace.jpeg"; // Ganti dengan path gambar yang sesuai
 
             // Coba baca gambar dari file dan atur sebagai ikon pada JLabel
@@ -439,7 +439,7 @@ public class Home extends javax.swing.JFrame {
             } catch (IOException e) {
                 e.printStackTrace();
             }
-        } else if(selectedText.equals("Dolce")) {
+        } else if(selectedText.equals("Dolce [Rp220000]")) {
             String pathGambar = "C:\\Users\\LENOVO\\Documents\\NetBeansProjects\\Desain_Basdat\\src\\main\\java\\com\\mycompany\\desain_basdat\\Dolce.jpeg"; // Ganti dengan path gambar yang sesuai
 
             // Coba baca gambar dari file dan atur sebagai ikon pada JLabel
@@ -450,7 +450,7 @@ public class Home extends javax.swing.JFrame {
             } catch (IOException e) {
                 e.printStackTrace();
             }
-        } else if(selectedText.equals("Levis")) {
+        } else if(selectedText.equals("Levis [Rp400000]")) {
             String pathGambar = "C:\\Users\\LENOVO\\Documents\\NetBeansProjects\\Desain_Basdat\\src\\main\\java\\com\\mycompany\\desain_basdat\\Levis.png"; // Ganti dengan path gambar yang sesuai
 
             // Coba baca gambar dari file dan atur sebagai ikon pada JLabel
@@ -461,7 +461,7 @@ public class Home extends javax.swing.JFrame {
             } catch (IOException e) {
                 e.printStackTrace();
             }
-        } else if(selectedText.equals("Calvin")) {
+        } else if(selectedText.equals("Calvin [Rp350000]")) {
             String pathGambar = "C:\\Users\\LENOVO\\Documents\\NetBeansProjects\\Desain_Basdat\\src\\main\\java\\com\\mycompany\\desain_basdat\\Calvin.jpeg"; // Ganti dengan path gambar yang sesuai
 
             // Coba baca gambar dari file dan atur sebagai ikon pada JLabel
@@ -472,7 +472,7 @@ public class Home extends javax.swing.JFrame {
             } catch (IOException e) {
                 e.printStackTrace();
             }
-        } else if(selectedText.equals("Chanel")) {
+        } else if(selectedText.equals("Chanel [Rp190000]")) {
             String pathGambar = "C:\\Users\\LENOVO\\Documents\\NetBeansProjects\\Desain_Basdat\\src\\main\\java\\com\\mycompany\\desain_basdat\\Chanel.jpeg"; // Ganti dengan path gambar yang sesuai
 
             // Coba baca gambar dari file dan atur sebagai ikon pada JLabel
@@ -483,7 +483,7 @@ public class Home extends javax.swing.JFrame {
             } catch (IOException e) {
                 e.printStackTrace();
             }
-        } else if(selectedText.equals("Oakley")) {
+        } else if(selectedText.equals("Oakley [Rp150000]")) {
             String pathGambar = "C:\\Users\\LENOVO\\Documents\\NetBeansProjects\\Desain_Basdat\\src\\main\\java\\com\\mycompany\\desain_basdat\\Oakley.jpeg"; // Ganti dengan path gambar yang sesuai
 
             // Coba baca gambar dari file dan atur sebagai ikon pada JLabel
