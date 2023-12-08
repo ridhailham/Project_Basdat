@@ -311,20 +311,20 @@ public class AdminHome extends javax.swing.JFrame {
                 
         if(lensa.getSelectedItem().toString().equals("Kosong")) {
             harga_lensa = 0;
-        } else if(frame.getSelectedItem().toString().equals("Silinder [Rp250000]")) {
+        } else if(lensa.getSelectedItem().toString().equals("Silinder [Rp250000]")) {
             harga_lensa = 250000;
-        } else if(frame.getSelectedItem().toString().equals("Minus [Rp200000]")) {
-            harga_lensa = 200000;
-        } else if(frame.getSelectedItem().toString().equals("Plus [Rp150000]")) {
+        } else if(lensa.getSelectedItem().toString().equals("Minus [Rp150000]")) {
             harga_lensa = 150000;
-        } else if(frame.getSelectedItem().toString().equals("Silinder & Minus [Rp400000]")) {
+        } else if(lensa.getSelectedItem().toString().equals("Plus [Rp200000]")) {
+            harga_lensa = 200000;
+        } else if(lensa.getSelectedItem().toString().equals("Silinder & Minus [Rp400000]")) {
             harga_lensa = 400000;
-        } else if(frame.getSelectedItem().toString().equals("Silinder & Plus [Rp350000]")) {
+        } else if(lensa.getSelectedItem().toString().equals("Silinder & Plus [Rp350000]")) {
             harga_lensa = 350000;
         }
         
         
-        harga_akhir = harga_frame + harga_lensa;
+        harga_akhir = (harga_frame + harga_lensa);
         String hasil = String.valueOf(harga_akhir);            
         total_harga.setText(hasil);
     }//GEN-LAST:event_hitung_hargaActionPerformed

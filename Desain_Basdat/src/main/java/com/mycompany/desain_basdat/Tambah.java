@@ -82,7 +82,8 @@ public class Tambah extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(800, 650));
+        setMinimumSize(new java.awt.Dimension(800, 500));
+        setPreferredSize(new java.awt.Dimension(800, 500));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -103,10 +104,10 @@ public class Tambah extends javax.swing.JFrame {
         jLabel4.setText("Lensa");
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(94, 262, 150, -1));
 
-        lensa.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Kosong", "Silinder", "Plus", "Minus", "Silinder & Minus", "Silinder & Plus" }));
-        getContentPane().add(lensa, new org.netbeans.lib.awtextra.AbsoluteConstraints(278, 262, -1, -1));
+        lensa.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Kosong", "Silinder [Rp250000]", "Plus [Rp200000]", "Minus [Rp150000]", "Silinder & Minus [Rp400000]", "Silinder & Plus [Rp350000]" }));
+        getContentPane().add(lensa, new org.netbeans.lib.awtextra.AbsoluteConstraints(278, 262, 200, -1));
 
-        frame.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Kosong", "Versace", "Dolce", "Levis", "Calvin", "Chanel", "Oakley" }));
+        frame.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Kosong", "Versace [Rp320000]", "Dolce [Rp220000]", "Levis [Rp400000]", "Calvin [Rp350000]", "Chanel [Rp190000]", "Oakley [Rp150000]" }));
         frame.setMinimumSize(new java.awt.Dimension(121, 22));
         frame.setPreferredSize(new java.awt.Dimension(121, 22));
         frame.addActionListener(new java.awt.event.ActionListener() {
@@ -114,7 +115,7 @@ public class Tambah extends javax.swing.JFrame {
                 frameActionPerformed(evt);
             }
         });
-        getContentPane().add(frame, new org.netbeans.lib.awtextra.AbsoluteConstraints(278, 222, -1, -1));
+        getContentPane().add(frame, new org.netbeans.lib.awtextra.AbsoluteConstraints(278, 222, 200, -1));
 
         jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel5.setText("Total Harga");
@@ -179,6 +180,7 @@ public class Tambah extends javax.swing.JFrame {
 
         jLabel7.setIcon(new javax.swing.ImageIcon("C:\\Users\\LENOVO\\Downloads\\backgroundhijau4.jpg")); // NOI18N
         jLabel7.setText("jLabel7");
+        jLabel7.setMinimumSize(new java.awt.Dimension(800, 500));
         jLabel7.setPreferredSize(new java.awt.Dimension(800, 500));
         getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 820, 550));
 
@@ -246,19 +248,19 @@ public class Tambah extends javax.swing.JFrame {
                 
         if(lensa.getSelectedItem().toString().equals("Kosong")) {
             harga_lensa = 0;
-        } else if(frame.getSelectedItem().toString().equals("Silinder [Rp250000]")) {
+        } else if(lensa.getSelectedItem().toString().equals("Silinder [Rp250000]")) {
             harga_lensa = 250000;
-        } else if(frame.getSelectedItem().toString().equals("Minus [Rp200000]")) {
-            harga_lensa = 200000;
-        } else if(frame.getSelectedItem().toString().equals("Plus [Rp150000]")) {
+        } else if(lensa.getSelectedItem().toString().equals("Minus [Rp150000]")) {
             harga_lensa = 150000;
-        } else if(frame.getSelectedItem().toString().equals("Silinder & Minus [Rp400000]")) {
+        } else if(lensa.getSelectedItem().toString().equals("Plus [Rp200000]")) {
+            harga_lensa = 200000;
+        } else if(lensa.getSelectedItem().toString().equals("Silinder & Minus [Rp400000]")) {
             harga_lensa = 400000;
-        } else if(frame.getSelectedItem().toString().equals("Silinder & Plus [Rp350000]")) {
+        } else if(lensa.getSelectedItem().toString().equals("Silinder & Plus [Rp350000]")) {
             harga_lensa = 350000;
         }
                 
-        harga_akhir = harga_frame + harga_lensa;
+        harga_akhir = (harga_frame + harga_lensa);
         String hasil = String.valueOf(harga_akhir);            
         total_harga.setText(hasil);
     }//GEN-LAST:event_hitung_hargaActionPerformed

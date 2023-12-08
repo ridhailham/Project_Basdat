@@ -150,7 +150,7 @@ public class Home extends javax.swing.JFrame {
         jLabel4.setText("Lensa");
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(48, 262, 150, -1));
 
-        lensa.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Kosong", "Silinder [Rp250000]", "Plus [Rp150000]", "Minus [Rp200000]", "Silinder & Minus [Rp400000]", "Silinder & Plus [Rp350000]" }));
+        lensa.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Kosong", "Silinder [Rp250000]", "Plus [Rp200000]", "Minus [Rp150000]", "Silinder & Minus [Rp400000]", "Silinder & Plus [Rp350000]" }));
         lensa.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 lensaActionPerformed(evt);
@@ -327,20 +327,20 @@ public class Home extends javax.swing.JFrame {
                 
         if(lensa.getSelectedItem().toString().equals("Kosong")) {
             harga_lensa = 0;
-        } else if(frame.getSelectedItem().toString().equals("Silinder [Rp250000]")) {
+        } else if(lensa.getSelectedItem().toString().equals("Silinder [Rp250000]")) {
             harga_lensa = 250000;
-        } else if(frame.getSelectedItem().toString().equals("Minus [Rp200000]")) {
+        } else if(lensa.getSelectedItem().toString().equals("Minus [Rp200000]")) {
             harga_lensa = 200000;
-        } else if(frame.getSelectedItem().toString().equals("Plus [Rp150000]")) {
+        } else if(lensa.getSelectedItem().toString().equals("Plus [Rp150000]")) {
             harga_lensa = 150000;
-        } else if(frame.getSelectedItem().toString().equals("Silinder & Minus [Rp400000]")) {
+        } else if(lensa.getSelectedItem().toString().equals("Silinder & Minus [Rp400000]")) {
             harga_lensa = 400000;
-        } else if(frame.getSelectedItem().toString().equals("Silinder & Plus [Rp350000]")) {
+        } else if(lensa.getSelectedItem().toString().equals("Silinder & Plus [Rp350000]")) {
             harga_lensa = 350000;
         }
         
         
-        int harga_akhir = harga_frame + harga_lensa;
+        int harga_akhir = (harga_frame + harga_lensa);
         String hasil = String.valueOf(harga_akhir);            
         total_harga.setText(hasil);
     }//GEN-LAST:event_hitung_hargaActionPerformed
@@ -404,13 +404,13 @@ public class Home extends javax.swing.JFrame {
                 lensa.setSelectedIndex(1);
                 harga_lensa = 250000;
                 break;
-            case "Minus [Rp200000]":
+            case "Minus [Rp150000]":
                 lensa.setSelectedIndex(2);
-                harga_lensa = 200000;
-                break;
-            case "Plus [Rp150000]":
-                lensa.setSelectedIndex(3);
                 harga_lensa = 150000;
+                break;
+            case "Plus [Rp200000]":
+                lensa.setSelectedIndex(3);
+                harga_lensa = 200000;
                 break;
             case "Silinder & Minus [Rp400000]":
                 lensa.setSelectedIndex(4);
