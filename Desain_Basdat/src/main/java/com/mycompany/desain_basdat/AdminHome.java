@@ -112,9 +112,7 @@ public class AdminHome extends javax.swing.JFrame {
         frame = new javax.swing.JComboBox<>();
         jLabel5 = new javax.swing.JLabel();
         total_harga = new javax.swing.JLabel();
-        reset = new javax.swing.JButton();
         lbl_hasil = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable_Display_Pemesanan = new javax.swing.JTable();
         tambah = new javax.swing.JButton();
@@ -127,6 +125,7 @@ public class AdminHome extends javax.swing.JFrame {
         jLabel8 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         hitung_harga = new javax.swing.JButton();
+        jLabel6 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
@@ -169,22 +168,7 @@ public class AdminHome extends javax.swing.JFrame {
 
         total_harga.setText("0");
         getContentPane().add(total_harga, new org.netbeans.lib.awtextra.AbsoluteConstraints(232, 315, 209, 20));
-
-        reset.setText("Reset");
-        reset.setMaximumSize(new java.awt.Dimension(102, 23));
-        reset.setMinimumSize(new java.awt.Dimension(102, 23));
-        reset.setPreferredSize(new java.awt.Dimension(102, 23));
-        reset.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                resetActionPerformed(evt);
-            }
-        });
-        getContentPane().add(reset, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 410, 100, 30));
         getContentPane().add(lbl_hasil, new org.netbeans.lib.awtextra.AbsoluteConstraints(428, 439, 501, 25));
-
-        jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
-        jLabel6.setText("Admin");
-        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(175, 25, -1, -1));
 
         jTable_Display_Pemesanan.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -235,13 +219,13 @@ public class AdminHome extends javax.swing.JFrame {
         lbl_image.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         getContentPane().add(lbl_image, new org.netbeans.lib.awtextra.AbsoluteConstraints(232, 349, 218, 90));
 
-        btnImage.setText("Choose");
+        btnImage.setText("Bukti Pembayaran");
         btnImage.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnImageActionPerformed(evt);
             }
         });
-        getContentPane().add(btnImage, new org.netbeans.lib.awtextra.AbsoluteConstraints(48, 350, 99, -1));
+        getContentPane().add(btnImage, new org.netbeans.lib.awtextra.AbsoluteConstraints(48, 350, 150, 30));
 
         LogOut.setText("Log Out");
         LogOut.addActionListener(new java.awt.event.ActionListener() {
@@ -269,19 +253,29 @@ public class AdminHome extends javax.swing.JFrame {
             }
         });
 
+        jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
+        jLabel6.setText("Admin");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(480, Short.MAX_VALUE)
-                .addComponent(hitung_harga)
-                .addGap(38, 38, 38))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap(247, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(hitung_harga)
+                        .addGap(38, 38, 38))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel6)
+                        .addGap(223, 223, 223))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(309, Short.MAX_VALUE)
+                .addGap(23, 23, 23)
+                .addComponent(jLabel6)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 222, Short.MAX_VALUE)
                 .addComponent(hitung_harga, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(159, 159, 159))
         );
@@ -328,14 +322,6 @@ public class AdminHome extends javax.swing.JFrame {
         String hasil = String.valueOf(harga_akhir);            
         total_harga.setText(hasil);
     }//GEN-LAST:event_hitung_hargaActionPerformed
-
-    private void resetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_resetActionPerformed
-        nama_pelanggan.setText("");
-        nomor.setText("");
-        frame.setSelectedIndex(0);
-        lensa.setSelectedIndex(0);
-        total_harga.setText("0");
-    }//GEN-LAST:event_resetActionPerformed
 
     private void jTable_Display_PemesananMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable_Display_PemesananMouseClicked
         int i = jTable_Display_Pemesanan.getSelectedRow();
@@ -645,7 +631,6 @@ public class AdminHome extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> lensa;
     private javax.swing.JTextField nama_pelanggan;
     private javax.swing.JTextField nomor;
-    private javax.swing.JButton reset;
     private javax.swing.JButton tambah;
     private javax.swing.JLabel total_harga;
     private javax.swing.JButton updateBtn;

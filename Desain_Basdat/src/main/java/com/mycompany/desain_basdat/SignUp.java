@@ -54,7 +54,6 @@ public class SignUp extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(800, 500));
-        setPreferredSize(new java.awt.Dimension(800, 500));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
@@ -65,14 +64,18 @@ public class SignUp extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Username");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 120, -1, 20));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 130, -1, 20));
 
+        username.setBackground(new java.awt.Color(0, 204, 102));
+        username.setForeground(new java.awt.Color(255, 255, 255));
+        username.setBorder(null);
+        username.setCaretColor(new java.awt.Color(255, 255, 255));
         username.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 usernameActionPerformed(evt);
             }
         });
-        getContentPane().add(username, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 150, 506, 20));
+        getContentPane().add(username, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 160, 506, 20));
 
         jSeparator1.setBackground(new java.awt.Color(255, 255, 255));
         jSeparator1.setForeground(new java.awt.Color(255, 255, 255));
@@ -85,7 +88,7 @@ public class SignUp extends javax.swing.JFrame {
 
         jSeparator2.setBackground(new java.awt.Color(255, 255, 255));
         jSeparator2.setForeground(new java.awt.Color(255, 255, 255));
-        getContentPane().add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 370, 510, 10));
+        getContentPane().add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 360, 510, 10));
 
         signUp.setBackground(new java.awt.Color(0, 204, 102));
         signUp.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
@@ -116,6 +119,10 @@ public class SignUp extends javax.swing.JFrame {
         });
         getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 410, 70, 30));
 
+        confirm_password.setBackground(new java.awt.Color(0, 204, 102));
+        confirm_password.setForeground(new java.awt.Color(255, 255, 255));
+        confirm_password.setBorder(null);
+        confirm_password.setCaretColor(new java.awt.Color(255, 255, 255));
         confirm_password.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 confirm_passwordActionPerformed(evt);
@@ -126,19 +133,23 @@ public class SignUp extends javax.swing.JFrame {
         jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Password");
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 210, 83, 20));
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 220, 83, 20));
 
+        password.setBackground(new java.awt.Color(0, 204, 102));
+        password.setForeground(new java.awt.Color(255, 255, 255));
+        password.setBorder(null);
+        password.setCaretColor(new java.awt.Color(255, 255, 255));
         password.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 passwordActionPerformed(evt);
             }
         });
-        getContentPane().add(password, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 240, 500, 20));
+        getContentPane().add(password, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 250, 500, 20));
 
         jSeparator3.setBackground(new java.awt.Color(255, 255, 255));
         jSeparator3.setForeground(new java.awt.Color(255, 255, 255));
         getContentPane().add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 270, 510, 10));
-        getContentPane().add(lbl_confirmPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 380, 130, 20));
+        getContentPane().add(lbl_confirmPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 370, 130, 20));
         getContentPane().add(lbl_password, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 280, 140, 20));
         getContentPane().add(lbl_username, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 190, 130, 20));
 
@@ -169,7 +180,7 @@ public class SignUp extends javax.swing.JFrame {
     }//GEN-LAST:event_passwordActionPerformed
 
     private void signUpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_signUpActionPerformed
-        if(username.getText().trim().isEmpty() && confirm_password.getText().trim().isEmpty()){
+        if(username.getText().trim().isEmpty() && confirm_password.getText().trim().isEmpty() && password.getText().trim().isEmpty()){
             lbl_username.setText("Username is Empty");
             lbl_password.setText("Password is Empty");
             lbl_confirmPassword.setText("Confirm Password is Empty");
@@ -189,11 +200,11 @@ public class SignUp extends javax.swing.JFrame {
         } else if(username.getText().trim().isEmpty()) {
             lbl_username.setText("Username is Empty");
             return;
-        } else if(confirm_password.getText().trim().isEmpty()) {
+        }  else if(password.getText().trim().isEmpty()) {
             lbl_password.setText("Password is Empty");
             return;
-        } else if(lbl_confirmPassword.getText().trim().isEmpty()) {
-            lbl_password.setText("Confirm Password is Empty");
+        } else if(confirm_password.getText().trim().isEmpty()) {
+            lbl_confirmPassword.setText("Confirm Password is Empty");
             return;
         }
         

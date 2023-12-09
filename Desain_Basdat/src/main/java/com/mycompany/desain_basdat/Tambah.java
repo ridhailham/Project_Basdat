@@ -79,11 +79,14 @@ public class Tambah extends javax.swing.JFrame {
         lbl_image = new javax.swing.JLabel();
         btnImage = new javax.swing.JButton();
         lbl_frame_image = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMinimumSize(new java.awt.Dimension(800, 500));
-        setPreferredSize(new java.awt.Dimension(800, 500));
+        setBackground(new java.awt.Color(255, 255, 255));
+        setMaximumSize(new java.awt.Dimension(800, 670));
+        setMinimumSize(new java.awt.Dimension(800, 670));
+        setPreferredSize(new java.awt.Dimension(800, 670));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -121,13 +124,14 @@ public class Tambah extends javax.swing.JFrame {
         jLabel5.setText("Total Harga");
         getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(94, 302, 150, -1));
 
+        add.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         add.setText("Tambah");
         add.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 addActionPerformed(evt);
             }
         });
-        getContentPane().add(add, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 500, 101, 31));
+        getContentPane().add(add, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 570, 110, 40));
 
         total_harga.setText("0");
         getContentPane().add(total_harga, new org.netbeans.lib.awtextra.AbsoluteConstraints(278, 303, 149, 20));
@@ -138,9 +142,9 @@ public class Tambah extends javax.swing.JFrame {
                 hitung_hargaActionPerformed(evt);
             }
         });
-        getContentPane().add(hitung_harga, new org.netbeans.lib.awtextra.AbsoluteConstraints(445, 302, -1, -1));
+        getContentPane().add(hitung_harga, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 300, -1, 30));
 
-        reset.setText("Reset");
+        reset.setText("Clear");
         reset.setMaximumSize(new java.awt.Dimension(102, 23));
         reset.setMinimumSize(new java.awt.Dimension(102, 23));
         reset.setPreferredSize(new java.awt.Dimension(102, 23));
@@ -149,48 +153,66 @@ public class Tambah extends javax.swing.JFrame {
                 resetActionPerformed(evt);
             }
         });
-        getContentPane().add(reset, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 493, 110, 30));
-        getContentPane().add(lbl_hasil, new org.netbeans.lib.awtextra.AbsoluteConstraints(224, 478, 501, 25));
+        getContentPane().add(reset, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 570, 110, 30));
+
+        lbl_hasil.setForeground(new java.awt.Color(255, 0, 51));
+        getContentPane().add(lbl_hasil, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 600, 501, 25));
 
         jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
         jLabel6.setText("Tambah Pesanan");
         getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(223, 36, -1, -1));
 
+        kembali.setBackground(new java.awt.Color(255, 102, 102));
         kembali.setText("Kembali");
         kembali.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 kembaliActionPerformed(evt);
             }
         });
-        getContentPane().add(kembali, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 20, 130, 30));
+        getContentPane().add(kembali, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 30, 130, 30));
 
         lbl_image.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        getContentPane().add(lbl_image, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 360, 223, 111));
+        getContentPane().add(lbl_image, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 490, 260, 100));
 
-        btnImage.setText("Upload File");
+        btnImage.setText("Bukti Pembayaran");
         btnImage.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnImageActionPerformed(evt);
             }
         });
-        getContentPane().add(btnImage, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 400, 99, -1));
+        getContentPane().add(btnImage, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 500, 160, 40));
 
         lbl_frame_image.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        getContentPane().add(lbl_frame_image, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 360, 223, 111));
+        getContentPane().add(lbl_frame_image, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 330, 310, 140));
+
+        jLabel9.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel9.setText("BCA 00009998888777");
+        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 460, 150, -1));
 
         jLabel7.setIcon(new javax.swing.ImageIcon("C:\\Users\\LENOVO\\Downloads\\backgroundhijau4.jpg")); // NOI18N
         jLabel7.setText("jLabel7");
+        jLabel7.setMaximumSize(new java.awt.Dimension(800, 500));
         jLabel7.setMinimumSize(new java.awt.Dimension(800, 500));
         jLabel7.setPreferredSize(new java.awt.Dimension(800, 500));
-        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 820, 550));
+        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 800, 670));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void addActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addActionPerformed
         
-        if(nama_pelanggan.getText().trim().isEmpty() || nomor.getText().trim().isEmpty() || total_harga.getText().equals("0")) {
-            lbl_hasil.setText("Isi nama pelanggan dan nomor dengan benar atau Anda belum menghitung harga");
+        if(nama_pelanggan.getText().trim().isEmpty() && nomor.getText().trim().isEmpty() && total_harga.getText().equals("0") && lbl_image.getIcon() == null) {
+            lbl_hasil.setText("Isi nama pelanggan dan nomor dengan benar atau Anda belum menghitung harga atau belum ada bukti pembayaran");            
+            return;
+            
+        } else if(total_harga.getText().equals("0")) {
+            lbl_hasil.setText("Anda Belum Menghitung Harga");
+            return;
+            
+        } else if(lbl_image.getIcon() == null) {
+            lbl_hasil.setText("Belum Ada Bukti Pembayaran");
+            return;
+            
         } else {
             try {
                 Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
@@ -270,6 +292,8 @@ public class Tambah extends javax.swing.JFrame {
         nomor.setText("");
         frame.setSelectedIndex(0);
         lensa.setSelectedIndex(0);
+        lbl_frame_image.setIcon(null);
+        lbl_image.setIcon(null);
         total_harga.setText("0");
     }//GEN-LAST:event_resetActionPerformed
 
@@ -312,7 +336,7 @@ public class Tambah extends javax.swing.JFrame {
         String selectedText = (String) frame.getSelectedItem(); // Menggunakan comboBox bukan frame
         JOptionPane.showMessageDialog(this, "Selected Text: " + selectedText);
         
-        if(selectedText.equals("Versace")) {
+        if(selectedText.equals("Versace [Rp320000]")) {
             String pathGambar = "C:\\Users\\LENOVO\\Documents\\NetBeansProjects\\Desain_Basdat\\src\\main\\java\\com\\mycompany\\desain_basdat\\Versace.jpeg"; // Ganti dengan path gambar yang sesuai
 
             // Coba baca gambar dari file dan atur sebagai ikon pada JLabel
@@ -320,10 +344,11 @@ public class Tambah extends javax.swing.JFrame {
                 File fileGambar = new File(pathGambar);
                 Image gambar = ImageIO.read(fileGambar);
                 lbl_frame_image.setIcon(new ImageIcon(gambar));
+                
             } catch (IOException e) {
                 e.printStackTrace();
             }
-        } else if(selectedText.equals("Dolce")) {
+        } else if(selectedText.equals("Dolce [Rp220000]")) {
             String pathGambar = "C:\\Users\\LENOVO\\Documents\\NetBeansProjects\\Desain_Basdat\\src\\main\\java\\com\\mycompany\\desain_basdat\\Dolce.jpeg"; // Ganti dengan path gambar yang sesuai
 
             // Coba baca gambar dari file dan atur sebagai ikon pada JLabel
@@ -334,7 +359,7 @@ public class Tambah extends javax.swing.JFrame {
             } catch (IOException e) {
                 e.printStackTrace();
             }
-        } else if(selectedText.equals("Levis")) {
+        } else if(selectedText.equals("Levis [Rp400000]")) {
             String pathGambar = "C:\\Users\\LENOVO\\Documents\\NetBeansProjects\\Desain_Basdat\\src\\main\\java\\com\\mycompany\\desain_basdat\\Levis.png"; // Ganti dengan path gambar yang sesuai
 
             // Coba baca gambar dari file dan atur sebagai ikon pada JLabel
@@ -345,7 +370,7 @@ public class Tambah extends javax.swing.JFrame {
             } catch (IOException e) {
                 e.printStackTrace();
             }
-        } else if(selectedText.equals("Calvin")) {
+        } else if(selectedText.equals("Calvin [Rp350000]")) {
             String pathGambar = "C:\\Users\\LENOVO\\Documents\\NetBeansProjects\\Desain_Basdat\\src\\main\\java\\com\\mycompany\\desain_basdat\\Calvin.jpeg"; // Ganti dengan path gambar yang sesuai
 
             // Coba baca gambar dari file dan atur sebagai ikon pada JLabel
@@ -356,7 +381,7 @@ public class Tambah extends javax.swing.JFrame {
             } catch (IOException e) {
                 e.printStackTrace();
             }
-        } else if(selectedText.equals("Chanel")) {
+        } else if(selectedText.equals("Chanel [Rp190000]")) {
             String pathGambar = "C:\\Users\\LENOVO\\Documents\\NetBeansProjects\\Desain_Basdat\\src\\main\\java\\com\\mycompany\\desain_basdat\\Chanel.jpeg"; // Ganti dengan path gambar yang sesuai
 
             // Coba baca gambar dari file dan atur sebagai ikon pada JLabel
@@ -367,7 +392,7 @@ public class Tambah extends javax.swing.JFrame {
             } catch (IOException e) {
                 e.printStackTrace();
             }
-        } else if(selectedText.equals("Oakley")) {
+        } else if(selectedText.equals("Oakley [Rp150000]")) {
             String pathGambar = "C:\\Users\\LENOVO\\Documents\\NetBeansProjects\\Desain_Basdat\\src\\main\\java\\com\\mycompany\\desain_basdat\\Oakley.jpeg"; // Ganti dengan path gambar yang sesuai
 
             // Coba baca gambar dari file dan atur sebagai ikon pada JLabel
@@ -444,6 +469,7 @@ public class Tambah extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JButton kembali;
     private javax.swing.JLabel lbl_frame_image;
     private javax.swing.JLabel lbl_hasil;

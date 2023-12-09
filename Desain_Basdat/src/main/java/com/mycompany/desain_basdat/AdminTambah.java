@@ -82,6 +82,9 @@ public class AdminTambah extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMaximumSize(new java.awt.Dimension(800, 670));
+        setMinimumSize(new java.awt.Dimension(800, 670));
+        setPreferredSize(new java.awt.Dimension(800, 670));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -125,7 +128,7 @@ public class AdminTambah extends javax.swing.JFrame {
                 addActionPerformed(evt);
             }
         });
-        getContentPane().add(add, new org.netbeans.lib.awtextra.AbsoluteConstraints(94, 466, 101, 31));
+        getContentPane().add(add, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 580, 101, 31));
 
         total_harga.setText("0");
         getContentPane().add(total_harga, new org.netbeans.lib.awtextra.AbsoluteConstraints(278, 303, 149, 20));
@@ -136,9 +139,9 @@ public class AdminTambah extends javax.swing.JFrame {
                 hitung_hargaActionPerformed(evt);
             }
         });
-        getContentPane().add(hitung_harga, new org.netbeans.lib.awtextra.AbsoluteConstraints(445, 302, -1, -1));
+        getContentPane().add(hitung_harga, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 300, -1, -1));
 
-        reset.setText("Reset");
+        reset.setText("Clear");
         reset.setMaximumSize(new java.awt.Dimension(102, 23));
         reset.setMinimumSize(new java.awt.Dimension(102, 23));
         reset.setPreferredSize(new java.awt.Dimension(102, 23));
@@ -147,8 +150,8 @@ public class AdminTambah extends javax.swing.JFrame {
                 resetActionPerformed(evt);
             }
         });
-        getContentPane().add(reset, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 302, -1, -1));
-        getContentPane().add(lbl_hasil, new org.netbeans.lib.awtextra.AbsoluteConstraints(224, 478, 501, 25));
+        getContentPane().add(reset, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 590, -1, 30));
+        getContentPane().add(lbl_hasil, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 630, 501, 25));
 
         jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
         jLabel6.setText("Tambah Pesanan");
@@ -160,26 +163,28 @@ public class AdminTambah extends javax.swing.JFrame {
                 kembaliActionPerformed(evt);
             }
         });
-        getContentPane().add(kembali, new org.netbeans.lib.awtextra.AbsoluteConstraints(681, 36, 101, 31));
+        getContentPane().add(kembali, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 40, 101, 31));
 
         lbl_image.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        getContentPane().add(lbl_image, new org.netbeans.lib.awtextra.AbsoluteConstraints(442, 343, 223, 111));
+        getContentPane().add(lbl_image, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 510, 230, 100));
 
-        btnImage.setText("Choose");
+        btnImage.setText("Bukti Pembayaran");
         btnImage.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnImageActionPerformed(evt);
             }
         });
-        getContentPane().add(btnImage, new org.netbeans.lib.awtextra.AbsoluteConstraints(683, 394, 99, -1));
+        getContentPane().add(btnImage, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 390, 170, 30));
 
         lbl_frame_image.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        getContentPane().add(lbl_frame_image, new org.netbeans.lib.awtextra.AbsoluteConstraints(138, 343, 223, 111));
+        getContentPane().add(lbl_frame_image, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 340, 310, 140));
 
         jLabel7.setIcon(new javax.swing.ImageIcon("C:\\Users\\LENOVO\\Downloads\\backgroundhijau4.jpg")); // NOI18N
         jLabel7.setText("jLabel7");
+        jLabel7.setMaximumSize(new java.awt.Dimension(800, 670));
+        jLabel7.setMinimumSize(new java.awt.Dimension(800, 670));
         jLabel7.setPreferredSize(new java.awt.Dimension(800, 500));
-        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 820, 550));
+        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 800, 670));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -309,7 +314,7 @@ public class AdminTambah extends javax.swing.JFrame {
         String selectedText = (String) frame.getSelectedItem(); // Menggunakan comboBox bukan frame
         JOptionPane.showMessageDialog(this, "Selected Text: " + selectedText);
         
-        if(selectedText.equals("Versace")) {
+        if(selectedText.equals("Versace [Rp320000]")) {
             String pathGambar = "C:\\Users\\LENOVO\\Documents\\NetBeansProjects\\Desain_Basdat\\src\\main\\java\\com\\mycompany\\desain_basdat\\Versace.jpeg"; // Ganti dengan path gambar yang sesuai
 
             // Coba baca gambar dari file dan atur sebagai ikon pada JLabel
@@ -320,7 +325,7 @@ public class AdminTambah extends javax.swing.JFrame {
             } catch (IOException e) {
                 e.printStackTrace();
             }
-        } else if(selectedText.equals("Dolce")) {
+        } else if(selectedText.equals("Dolce [Rp220000]")) {
             String pathGambar = "C:\\Users\\LENOVO\\Documents\\NetBeansProjects\\Desain_Basdat\\src\\main\\java\\com\\mycompany\\desain_basdat\\Dolce.jpeg"; // Ganti dengan path gambar yang sesuai
 
             // Coba baca gambar dari file dan atur sebagai ikon pada JLabel
@@ -331,7 +336,7 @@ public class AdminTambah extends javax.swing.JFrame {
             } catch (IOException e) {
                 e.printStackTrace();
             }
-        } else if(selectedText.equals("Levis")) {
+        } else if(selectedText.equals("Levis [Rp400000]")) {
             String pathGambar = "C:\\Users\\LENOVO\\Documents\\NetBeansProjects\\Desain_Basdat\\src\\main\\java\\com\\mycompany\\desain_basdat\\Levis.png"; // Ganti dengan path gambar yang sesuai
 
             // Coba baca gambar dari file dan atur sebagai ikon pada JLabel
@@ -342,7 +347,7 @@ public class AdminTambah extends javax.swing.JFrame {
             } catch (IOException e) {
                 e.printStackTrace();
             }
-        } else if(selectedText.equals("Calvin")) {
+        } else if(selectedText.equals("Calvin [Rp350000]")) {
             String pathGambar = "C:\\Users\\LENOVO\\Documents\\NetBeansProjects\\Desain_Basdat\\src\\main\\java\\com\\mycompany\\desain_basdat\\Calvin.jpeg"; // Ganti dengan path gambar yang sesuai
 
             // Coba baca gambar dari file dan atur sebagai ikon pada JLabel
@@ -353,7 +358,7 @@ public class AdminTambah extends javax.swing.JFrame {
             } catch (IOException e) {
                 e.printStackTrace();
             }
-        } else if(selectedText.equals("Chanel")) {
+        } else if(selectedText.equals("Chanel [Rp190000]")) {
             String pathGambar = "C:\\Users\\LENOVO\\Documents\\NetBeansProjects\\Desain_Basdat\\src\\main\\java\\com\\mycompany\\desain_basdat\\Chanel.jpeg"; // Ganti dengan path gambar yang sesuai
 
             // Coba baca gambar dari file dan atur sebagai ikon pada JLabel
@@ -364,7 +369,7 @@ public class AdminTambah extends javax.swing.JFrame {
             } catch (IOException e) {
                 e.printStackTrace();
             }
-        } else if(selectedText.equals("Oakley")) {
+        } else if(selectedText.equals("Oakley [Rp150000]")) {
             String pathGambar = "C:\\Users\\LENOVO\\Documents\\NetBeansProjects\\Desain_Basdat\\src\\main\\java\\com\\mycompany\\desain_basdat\\Oakley.jpeg"; // Ganti dengan path gambar yang sesuai
 
             // Coba baca gambar dari file dan atur sebagai ikon pada JLabel

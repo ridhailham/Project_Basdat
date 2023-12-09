@@ -112,20 +112,21 @@ public class Home extends javax.swing.JFrame {
         frame = new javax.swing.JComboBox<>();
         jLabel5 = new javax.swing.JLabel();
         total_harga = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable_Display_Pemesanan = new javax.swing.JTable();
         tambah = new javax.swing.JButton();
         deleteBtn = new javax.swing.JButton();
         lbl_image = new javax.swing.JLabel();
-        btnImage = new javax.swing.JButton();
         LogOut = new javax.swing.JButton();
         lbl_frame_image = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         hitung_harga = new javax.swing.JButton();
-        reset = new javax.swing.JButton();
         updateBtn = new javax.swing.JButton();
         lbl_hasil = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        btnImage = new javax.swing.JButton();
+        jLabel6 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -170,10 +171,7 @@ public class Home extends javax.swing.JFrame {
         total_harga.setText("0");
         getContentPane().add(total_harga, new org.netbeans.lib.awtextra.AbsoluteConstraints(232, 303, 280, 20));
 
-        jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
-        jLabel6.setText("Customer");
-        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(175, 25, -1, -1));
-
+        jTable_Display_Pemesanan.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jTable_Display_Pemesanan.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null},
@@ -196,113 +194,94 @@ public class Home extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(jTable_Display_Pemesanan);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(829, 25, 560, 179));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 79, 700, 110));
 
+        tambah.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         tambah.setText("Tambah");
         tambah.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tambahActionPerformed(evt);
             }
         });
-        getContentPane().add(tambah, new org.netbeans.lib.awtextra.AbsoluteConstraints(1280, 250, 107, 31));
+        getContentPane().add(tambah, new org.netbeans.lib.awtextra.AbsoluteConstraints(1310, 250, 140, 40));
 
+        deleteBtn.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         deleteBtn.setText("Delete");
         deleteBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 deleteBtnActionPerformed(evt);
             }
         });
-        getContentPane().add(deleteBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(1280, 330, 107, 31));
+        getContentPane().add(deleteBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(1310, 370, 140, 40));
 
         lbl_image.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         getContentPane().add(lbl_image, new org.netbeans.lib.awtextra.AbsoluteConstraints(232, 337, 200, 80));
 
-        btnImage.setText("Choose");
-        btnImage.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnImageActionPerformed(evt);
-            }
-        });
-        getContentPane().add(btnImage, new org.netbeans.lib.awtextra.AbsoluteConstraints(48, 353, 99, -1));
-
+        LogOut.setBackground(new java.awt.Color(255, 102, 102));
+        LogOut.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         LogOut.setText("Log Out");
         LogOut.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 LogOutActionPerformed(evt);
             }
         });
-        getContentPane().add(LogOut, new org.netbeans.lib.awtextra.AbsoluteConstraints(1410, 30, 120, 40));
+        getContentPane().add(LogOut, new org.netbeans.lib.awtextra.AbsoluteConstraints(1420, 30, 110, 30));
 
         lbl_frame_image.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        getContentPane().add(lbl_frame_image, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 250, 400, 197));
+        getContentPane().add(lbl_frame_image, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 230, 400, 197));
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setPreferredSize(new java.awt.Dimension(400, 500));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        hitung_harga.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         hitung_harga.setText("Hitung Harga");
         hitung_harga.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 hitung_hargaActionPerformed(evt);
             }
         });
+        jPanel1.add(hitung_harga, new org.netbeans.lib.awtextra.AbsoluteConstraints(621, 306, -1, 30));
 
-        reset.setText("Reset");
-        reset.setMaximumSize(new java.awt.Dimension(102, 23));
-        reset.setMinimumSize(new java.awt.Dimension(102, 23));
-        reset.setPreferredSize(new java.awt.Dimension(102, 23));
-        reset.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                resetActionPerformed(evt);
-            }
-        });
-
+        updateBtn.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         updateBtn.setText("Update");
         updateBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 updateBtnActionPerformed(evt);
             }
         });
+        jPanel1.add(updateBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 370, 120, 50));
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(hitung_harga))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(47, 47, 47)
-                        .addComponent(updateBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(59, 59, 59)
-                        .addComponent(lbl_hasil, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 64, Short.MAX_VALUE)
-                        .addComponent(reset, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(77, 77, 77))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(306, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(lbl_hasil, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(hitung_harga)
-                        .addGap(83, 83, 83)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(updateBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(reset, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(10, 10, 10)))
-                .addGap(46, 46, 46))
-        );
+        lbl_hasil.setForeground(new java.awt.Color(255, 0, 0));
+        jPanel1.add(lbl_hasil, new org.netbeans.lib.awtextra.AbsoluteConstraints(207, 429, 350, 25));
+
+        jLabel7.setFont(new java.awt.Font("Serif", 1, 48)); // NOI18N
+        jLabel7.setText("Ubah Pesanan");
+        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 30, 300, 60));
+
+        jLabel9.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel9.setText("BCA 00009998888777");
+        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 350, 130, -1));
+
+        btnImage.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btnImage.setText("Bukti Pembayaran");
+        btnImage.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnImageActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnImage, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 380, 150, 30));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 800, -1));
+
+        jLabel6.setFont(new java.awt.Font("Serif", 1, 36)); // NOI18N
+        jLabel6.setText("Daftar Pesanan");
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(1010, 20, -1, 40));
 
         jLabel8.setIcon(new javax.swing.ImageIcon("C:\\Users\\LENOVO\\Downloads\\backgroundhijau4.jpg")); // NOI18N
         jLabel8.setText("jLabel7");
         jLabel8.setPreferredSize(new java.awt.Dimension(800, 500));
-        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 0, 760, 550));
+        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 0, 760, 560));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -344,14 +323,6 @@ public class Home extends javax.swing.JFrame {
         String hasil = String.valueOf(harga_akhir);            
         total_harga.setText(hasil);
     }//GEN-LAST:event_hitung_hargaActionPerformed
-
-    private void resetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_resetActionPerformed
-        nama_pelanggan.setText("");
-        nomor.setText("");
-        frame.setSelectedIndex(0);
-        lensa.setSelectedIndex(0);
-        total_harga.setText("0");
-    }//GEN-LAST:event_resetActionPerformed
 
     private void jTable_Display_PemesananMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable_Display_PemesananMouseClicked
         int i = jTable_Display_Pemesanan.getSelectedRow();
@@ -648,7 +619,9 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable_Display_Pemesanan;
@@ -658,7 +631,6 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> lensa;
     private javax.swing.JTextField nama_pelanggan;
     private javax.swing.JTextField nomor;
-    private javax.swing.JButton reset;
     private javax.swing.JButton tambah;
     private javax.swing.JLabel total_harga;
     private javax.swing.JButton updateBtn;

@@ -169,7 +169,7 @@ public class Login extends javax.swing.JFrame {
         lbl_password.setForeground(new java.awt.Color(255, 255, 255));
 
         SignUp.setBackground(new java.awt.Color(0, 204, 102));
-        SignUp.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        SignUp.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         SignUp.setForeground(new java.awt.Color(255, 255, 255));
         SignUp.setText("Sign Up");
         SignUp.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
@@ -202,7 +202,7 @@ public class Login extends javax.swing.JFrame {
                         .addGroup(jPanel2Layout.createSequentialGroup()
                             .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGap(28, 28, 28)
-                            .addComponent(SignUp, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(SignUp, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(108, Short.MAX_VALUE))
         );
@@ -232,8 +232,8 @@ public class Login extends javax.swing.JFrame {
                 .addGap(36, 36, 36)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
-                    .addComponent(SignUp, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(58, Short.MAX_VALUE))
+                    .addComponent(SignUp, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(53, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
