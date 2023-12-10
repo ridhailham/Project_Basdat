@@ -247,6 +247,7 @@ public class SignUp extends javax.swing.JFrame {
 
             // You can optionally clear the registration form fields here
             username.setText("");
+            password.setText("");
             confirm_password.setText("");
 
             con.close(); // Close the database connection

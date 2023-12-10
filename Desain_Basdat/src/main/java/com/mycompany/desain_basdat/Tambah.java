@@ -86,7 +86,6 @@ public class Tambah extends javax.swing.JFrame {
         setBackground(new java.awt.Color(255, 255, 255));
         setMaximumSize(new java.awt.Dimension(800, 670));
         setMinimumSize(new java.awt.Dimension(800, 670));
-        setPreferredSize(new java.awt.Dimension(800, 670));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N

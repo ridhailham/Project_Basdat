@@ -112,7 +112,6 @@ public class AdminHome extends javax.swing.JFrame {
         frame = new javax.swing.JComboBox<>();
         jLabel5 = new javax.swing.JLabel();
         total_harga = new javax.swing.JLabel();
-        lbl_hasil = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable_Display_Pemesanan = new javax.swing.JTable();
         tambah = new javax.swing.JButton();
@@ -126,6 +125,7 @@ public class AdminHome extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         hitung_harga = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
+        lbl_hasil = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
@@ -168,7 +168,6 @@ public class AdminHome extends javax.swing.JFrame {
 
         total_harga.setText("0");
         getContentPane().add(total_harga, new org.netbeans.lib.awtextra.AbsoluteConstraints(232, 315, 209, 20));
-        getContentPane().add(lbl_hasil, new org.netbeans.lib.awtextra.AbsoluteConstraints(428, 439, 501, 25));
 
         jTable_Display_Pemesanan.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -178,7 +177,7 @@ public class AdminHome extends javax.swing.JFrame {
                 {null, null, null, null, null, null, null}
             },
             new String [] {
-                "ID", "Nama Pelanggan", "Nomor", "Frame", "Lensa", "Total Harga", "Username"
+                "ID", "Nama Pelanggan", "Nomor", "Frame", "Lensa", "Total Harga", "ID Customer"
             }
         ));
         jTable_Display_Pemesanan.setSelectionBackground(new java.awt.Color(255, 255, 255));
@@ -261,26 +260,31 @@ public class AdminHome extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap(247, Short.MAX_VALUE)
+                .addContainerGap(104, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addComponent(hitung_harga)
                         .addGap(38, 38, 38))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel6)
-                        .addGap(223, 223, 223))))
+                        .addGap(223, 223, 223))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(lbl_hasil, javax.swing.GroupLayout.PREFERRED_SIZE, 501, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(15, 15, 15))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addGap(23, 23, 23)
                 .addComponent(jLabel6)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 222, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 262, Short.MAX_VALUE)
                 .addComponent(hitung_harga, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(159, 159, 159))
+                .addGap(118, 118, 118)
+                .addComponent(lbl_hasil, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(16, 16, 16))
         );
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 620, -1));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 620, 540));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
